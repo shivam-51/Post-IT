@@ -3,9 +3,9 @@
         <b-navbar toggleable="lg" type="dark" variant="info">
             <b-navbar-brand href="#">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                <img src="../../src/assets/pilogo.png" width="39" />
                 {{title}}
             </b-navbar-brand>
-
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav>
@@ -16,6 +16,8 @@
                 <b-collapse id="nav-collapse" is-nav>
                     <!-- Right aligned nav items -->
                     <b-navbar-nav class="ml-auto">
+                        <b-button class="mr-3">Sign Up</b-button>
+                        <b-button variant="outline-warning">Log In</b-button>
                         <b-nav-item-dropdown right>
                             <!-- Using 'button-content' slot -->
                             <template v-slot:button-content>
@@ -31,12 +33,11 @@
     </div>
 </template>
 
-
-
 <script>
 export default {
     name: "navbar",
     props: { title: String },
+    components: {},
 };
 </script>
 
