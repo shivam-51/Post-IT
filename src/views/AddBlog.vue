@@ -6,7 +6,7 @@
             <li><a href="#">Edit</a></li>
             <li><a href="#">Format</a></li>
             <li><a href="#">Help</a></li>
-		<img class="icon" src="../../src/assets/pilogo.png" width="39" />
+		<img class="icon" src="../../src/assets/PIlogo.png" width="39" />
             <li style="color:white;margin-left:1115px; padding:0px"><a href="#">POST-IT</a></li>
         </ul>
     </nav>    

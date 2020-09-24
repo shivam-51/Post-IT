@@ -12,17 +12,10 @@
 
     </b-navbar-nav>
             <b-navbar-brand href="#" to="/">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-
-
-                <img class="icon" src="../../src/assets/pilogo.png" width="39" />
+                
+                <img class="icon" src="../../src/assets/PIlogo.png" width="39" />
                 {{title}}
-                <img
-                    class="icon"
-                    src="../../src/assets/PIlogo.png"
-                    width="39"
-                />
-                {{ title }}
+                
             </b-navbar-brand>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -38,15 +31,6 @@
 
                         <b-button variant="outline-warning" class="mr-3" to="signup">Sign Up</b-button>
                         <b-button variant="outline-warning" class="mr-2" to="login">Log In</b-button>
-                        <b-button class="mr-3 button1" to="signup"
-                            >Sign Up</b-button
-                        >
-                        <b-button
-                            variant="outline-warning"
-                            class="mr-2 button1"
-                            to="login"
-                            >Log In</b-button
-                        >
                         <b-nav-item-dropdown right>
                             <!-- Using 'button-content' slot -->
                             <template v-slot:button-content>
