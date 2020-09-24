@@ -4,7 +4,8 @@
     <!--Step 1 : Adding HTML-->
     <form action="/action_page.php"> 
         <div class="imgcontainer"> 
-            <img src= "./pilogo.png" alt="Avatar" style="height=20% width=20%" class="avatar"> 
+   
+            <img src= "./pilogo.png" alt="Avatar" style="width: 20%; height: 20%" class="avatar">
         </div> 
 
         <div class="container"> 
@@ -25,7 +26,7 @@
     </form> 
 
 </body> 
-
+</template>
 
 <style scoped> 
     /*set border to the form*/ 
@@ -102,5 +103,3 @@
         } 
     } 
 </style> 
-</div>
-</template>

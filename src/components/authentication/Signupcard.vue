@@ -1,10 +1,11 @@
 <template>
     <body  style="background-color:lavenderblush;">
-	<div class="imgcontainer">
-		<img src= "./pilogo.png" alt="Avatar" style="height=10% width=10%" class="avatar"> 
-	</div>
+	
 	<!--Step 1:Adding HTML-->
 	<form action="/action_page.php" style="border:1px solid #ccc">
+		<div class="imgcontainer">
+		<img src= "./pilogo.png" alt="Avatar" style="width: 10%; height: 10%" class="avatar">
+	</div>
 		<div class="container">
 			<label><b>Username</b></label>
 			<input type="text" placeholder="Enter Username" name="name" required>
@@ -33,7 +34,7 @@
 
 
 <style scoped>
-<style>
+
 	/*add full-width input fields*/
 	
 	input[type=text],
