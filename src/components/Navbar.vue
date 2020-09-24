@@ -4,7 +4,7 @@
             <b-navbar-brand href="#" to="/">
                 <img
                     class="icon"
-                    src="../../src/assets/pilogo.png"
+                    src="../../src/assets/PIlogo.png"
                     width="39"
                 />
                 {{ title }}
@@ -55,14 +55,16 @@ export default {
 
 <style scoped>
 .bg-info {
-    background-color: #563d7c !important;
+    background-color: #392557 !important;
     padding: 0.7rem;
 }
 .icon {
     display: inline-block;
     margin-right: 2px;
+    width: 40px;
 }
 .button1 {
     border-radius: 15px;
+    width: 100px;
 }
 </style>>

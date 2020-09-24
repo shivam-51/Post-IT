@@ -19,3 +19,10 @@ export default {
     name: "Footer",
 };
 </script>
+
+<style>
+footer {
+    margin-top: 50px;
+    /* background-color: #162029; */
+}
+</style>

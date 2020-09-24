@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <Navbar title="Post-IT" />
         <router-view />
         <Footer />
     </div>
@@ -7,10 +8,12 @@
 
 <script>
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 export default {
     name: "app",
     components: {
         Footer,
+        Navbar,
     },
 };
 </script>
