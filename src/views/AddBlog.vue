@@ -1,15 +1,6 @@
 <template>
     <div style="margin:0 auto">
-    <nav class="main_nav">
-        <ul style="display: inline-block;">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Edit</a></li>
-            <li><a href="#">Format</a></li>
-            <li><a href="#">Help</a></li>
-		<img class="icon" src="../../src/assets/PIlogo.png" width="39" />
-            <li style="color:white;margin-left:1115px; padding:0px"><a href="#">POST-IT</a></li>
-        </ul>
-    </nav>    
+        
     <h1 style="margin-left: 20px;margin-top:20px;font-family:san-serif;color:#563d7c">ADD A BLOG</h1><br>
     <form method="POST">
         <input id=div type="text" placeholder="ENTER THE TITLE OF BLOG" required>
