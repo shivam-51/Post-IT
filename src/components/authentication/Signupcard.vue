@@ -19,7 +19,6 @@
 			<label><b>Repeat Password</b></label>
 			<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 			<input type="checkbox" checked="checked"> Remember me
-			<p>To create an account you have to agree our <a href="#">Terms & Privacy</a>.</p>
 
 			<div class="clearfix">
 				<button type="button" class="cancelbtn">Cancel</button>
