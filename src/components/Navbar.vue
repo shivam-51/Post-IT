@@ -7,6 +7,10 @@
         <b-dropdown-item href="https://www.iiests.ac.in/" target="_blank">IIEST</b-dropdown-item>
         <b-dropdown-item href="https://www.iiests.ac.in/IIEST/AcaUnitDetails/IT" target="_blank">IT-IIEST</b-dropdown-item>
         <b-dropdown-item href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit" target="_blank">SOCIT</b-dropdown-item>
+
+        <b-dropdown-item href="https://www.iiests.ac.in/">IIEST</b-dropdown-item>
+        <b-dropdown-item href="https://www.iiests.ac.in/IIEST/AcaUnitDetails/IT">IT-IIEST</b-dropdown-item>
+        <b-dropdown-item href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit">SOCIT</b-dropdown-item>
   
       </b-nav-item-dropdown>
 
@@ -16,6 +20,7 @@
 
                 <img class="icon" src="../../src/assets/PIlogo.png" width="39" />
                 {{title}}
+
             </b-navbar-brand>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -62,4 +67,4 @@ export default {
     display: inline-block;
     margin-right: 2px;
 }
-</style>>
+</style>

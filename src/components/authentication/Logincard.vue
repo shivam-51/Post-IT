@@ -7,6 +7,10 @@
    
             <img src= "@/assets/PIlogo.png" alt="Avatar" style="width: 20%; height: 20%" class="avatar">
         </div>
+        <div class="imgcontainer"> 
+   
+            <img src= "./pilogo.png" alt="Avatar" style="width: 20%; height: 20%" class="avatar">
+        </div> 
 
         <div class="container"> 
             <label><b>Username</b></label> 
@@ -102,4 +106,5 @@
             width: 100%; 
         } 
     } 
+
 </style> 

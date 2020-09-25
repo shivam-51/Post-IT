@@ -5,6 +5,7 @@
 	<form action="/action_page.php" style="border:1px solid #ccc">
 		<div class="imgcontainer">
 		<img src= "@/assets/PIlogo.png" alt="Avatar" style="width: 10%; height: 10%" class="avatar">
+		<img src= "./pilogo.png" alt="Avatar" style="width: 10%; height: 10%" class="avatar">
 	</div>
 		<div class="container">
 			<label><b>Username</b></label>
@@ -20,6 +21,7 @@
 			<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 			<input type="checkbox" checked="checked"> Remember me
 
+
 			<div class="clearfix">
 				<button type="button" class="cancelbtn">Cancel</button>
 				<button type="submit" class="signupbtn">Sign Up</button>
@@ -33,6 +35,7 @@
 
 
 <style scoped>
+
 	/*add full-width input fields*/
 	
 	input[type=text],
@@ -97,4 +100,5 @@
 			width: 100%;
 		}
 	}
+
 </style>
