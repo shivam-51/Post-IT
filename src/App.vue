@@ -1,8 +1,12 @@
 <template>
     <div id="app">
+<<<<<<< HEAD
+       <router-view />
+=======
         <Navbar title="Post-IT" />
         <router-view />
         <Footer />
+>>>>>>> 9acc13c67d76efd0facbd36d4a1e245ce790979e
     </div>
 </template>
 
