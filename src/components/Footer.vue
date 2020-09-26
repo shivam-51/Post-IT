@@ -23,6 +23,7 @@ export default {
 <style>
 footer {
     margin-top: 50px;
+	height: 300px;
     /* background-color: #162029; */
 }
 </style>
