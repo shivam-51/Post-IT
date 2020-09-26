@@ -3,7 +3,7 @@
         <b-carousel
             id="carousel-1"
             v-model="slide"
-            :interval="40000"
+            :interval="4000"
             controls
             indicators
             background="white"
@@ -18,7 +18,7 @@
                 <b-carousel-slide>
                     <template v-slot:img>
                         <img
-                            class="image"
+                            class="image img-fluid"
                             src="@/assets/ITlogo.png"
                             alt="image slot"
                         />
@@ -29,7 +29,7 @@
                 <b-carousel-slide>
                     <template v-slot:img>
                         <img
-                            class="image"
+                            class="image img-fluid"
                             src="@/assets/IIESTlogo.png"
                             alt="image slot"
                         />
@@ -63,7 +63,7 @@
 }
 .image {
     width: auto;
-    height: 360px;
+    height: 300px;
     max-height: 360px;
 }
 </style>
