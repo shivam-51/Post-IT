@@ -41,7 +41,7 @@
 </template>
 
 
-<style>
+<style scoped>
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     height: 100px;
