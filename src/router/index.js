@@ -32,7 +32,16 @@ const routes = [
     path: '/addblog',
     name: 'AddBlog',
     component: () => import('../views/AddBlog.vue')
-  }
+  },
+  {
+    path: '/team',
+    name: 'Team',
+    component: () => import('../views/Team.vue')
+  },
+  
+  
+  
+
 ]
 
 const router = new VueRouter({
