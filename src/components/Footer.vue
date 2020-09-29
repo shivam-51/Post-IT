@@ -1,5 +1,5 @@
 <template>
-    <footer id="main-footer" class="bg-dark">
+    <footer id="main-footer">
         <div class="container">
             <div class="row">
                 <div class="col text-center py-4" style="color: white">
@@ -23,7 +23,8 @@ export default {
 <style>
 footer {
     margin-top: 50px;
-    height:300px;
-    /* background-color: #162029; */
+    height: 300px;
+    background-color: #162029;
+
 }
 </style>
