@@ -11,7 +11,7 @@
                 />
             <br>
             <div>
-                <label class=div><b>Username</b></label>
+                <label><b>Username</b></label>
                 <input
                     type="text"
                     placeholder="Enter Username"
@@ -174,7 +174,7 @@ img.avatar {
 
 @media screen and (max-width:450px) {
     .cancelbtn,
-    .signupbtn,.div {
+    .signupbtn{
         width: 100%;
     }
 }
