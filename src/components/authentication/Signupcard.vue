@@ -1,17 +1,17 @@
 <template>
-    <body style="background-color: lavenderblush">
+    <body class="body_signup">
+        <div>
         <!--Step 1:Adding HTML-->
-        <form action="/action_page.php" style="border: 1px solid #ccc">
-            <div class="imgcontainer">
+        <div class="card card-container">
+        <form action="/action_page.php" class="signup">
+            
                 <img
-                    src="@/assets/PIlogo.png"
-                    alt="Avatar"
-                    style="width: 10%; height: 10%"
-                    class="avatar"
+                    class="profile-img-card"
+                    src="@/assets/PIlogodark.png"
                 />
-            </div>
-            <div class="container">
-                <label><b>Username</b></label>
+            <br>
+            <div>
+                <label class=div><b>Username</b></label>
                 <input
                     type="text"
                     placeholder="Enter Username"
@@ -50,12 +50,57 @@
                 </div>
             </div>
         </form>
+        </div>
+    </div>
+        
     </body>
 </template>
 
 <style scoped>
 /*add full-width input fields*/
+.body_signup {
+    /* height: 100%; */
+    min-height: 100vh;
+    max-width: 2006px;
+    padding: 0;
+    background-image: url("../../assets/ocean.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-container.card {
+    max-width: 450px;
+    padding: 30px 40px;
+}
+.card { 
+    height:710px;
+    width:450px;
+    background-color: #f7f7f7;
+    /* just in case there no content */
+    padding: 15px 25px 30px;
+    margin: 20px auto 25px;
+     /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+     -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); 
+}  
+.profile-img-card {
+    width: 120px;
+    height: 120px;
+    margin-top:0px;
+    margin-left:120px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
 input[type="text"],
 input[type="password"] {
     width: 100%;
@@ -92,10 +137,25 @@ img.avatar {
 }
 /*float cancel and signup buttons and add an equal width*/
 
-.cancelbtn,
-.signupbtn {
-    float: left;
-    width: 50%;
+.cancelbtn
+ {
+    margin-left:40px;
+    width: 120px;
+    border-radius: 3px;
+}
+.cancelbtn:hover{
+    background-color: black;
+}
+.signupbtn
+ {
+    margin-left:40px;
+    width: 120px;
+    border-radius: 3px;
+    background-color:rgb(104, 145, 162);
+}
+.signupbtn:hover{
+    background-color:  rgb(12, 97, 33);
+
 }
 /*add padding to container elements*/
 
@@ -112,9 +172,9 @@ img.avatar {
 /*styles for cancel button and signup button 
 	on extra small screens*/
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width:450px) {
     .cancelbtn,
-    .signupbtn {
+    .signupbtn,.div {
         width: 100%;
     }
 }
