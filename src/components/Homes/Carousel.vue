@@ -41,7 +41,7 @@
 </template>
 
 
-<style scoped>
+<style >
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     height: 100px;
@@ -53,13 +53,13 @@
 .carousel-control-next-icon:after {
     content: ">";
     font-size: 55px;
-    color: red;
+    color: black;
 }
 
 .carousel-control-prev-icon:after {
     content: "<";
     font-size: 55px;
-    color: red;
+    color: black;
 }
 .image {
     width: auto;
