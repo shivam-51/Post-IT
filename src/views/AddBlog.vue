@@ -64,6 +64,9 @@ export default {
 </script>
 
 <style scoped>
+.blogs {
+    margin-bottom: 50px;
+}
 #div {
     width: 500px;
     height: 70px;
