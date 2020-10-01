@@ -1,52 +1,60 @@
 <template>
-    <div style="margin: 0 auto">
-        <h1
-            style="
-                margin-left: 20px;
-                margin-top: 20px;
-                font-family: san-serif;
-                color: #563d7c;
-            "
-        >
-            ADD A BLOG
-        </h1>
-        <br />
-        <form method="POST">
-            <input
-                id="div"
-                type="text"
-                placeholder="ENTER THE TITLE OF BLOG"
-                required
-            />
-            <br /><br />
+    <div class="blogs">
+        <div style="margin: 0 auto">
+            <h1
+                style="
+                    margin-left: 20px;
+                    margin-top: 20px;
+                    font-family: san-serif;
+                    color: #563d7c;
+                "
+            >
+                ADD A BLOG
+            </h1>
+            <br />
+            <form method="POST">
+                <input
+                    id="div"
+                    type="text"
+                    placeholder="ENTER THE TITLE OF BLOG"
+                    required
+                />
+                <br /><br />
 
-            <input
-                id="div"
-                type="text"
-                placeholder="ADD HASHTAGS IF NECESSARY"
-            />
-            <br /><br />
+                <input
+                    id="div"
+                    type="text"
+                    placeholder="ADD HASHTAGS IF NECESSARY"
+                />
+                <br /><br />
 
-            <form>
-                <p style="font: medium; margin-left: -360px">Choose an image</p>
-                <input id="div" type="file" />
+                <form>
+                    <p style="font: medium; margin-left: -360px">
+                        Choose an image
+                    </p>
+                    <input id="div" type="file" />
+                </form>
+                <br /><br />
+                <textarea
+                    id="txt"
+                    minlength="100"
+                    placeholder="ADD A DESCRIPTION OF THE BLOG"
+                    required
+                ></textarea>
+                <br /><br />
+
+                <input
+                    id="sub"
+                    type="submit"
+                    value="POST!"
+                    style="
+                        width: 200px;
+                        border-radius: 5px;
+                        align-content: center;
+                    "
+                />
             </form>
-            <br /><br />
-            <textarea
-                id="txt"
-                minlength="100"
-                placeholder="ADD A DESCRIPTION OF THE BLOG"
-                required
-            ></textarea>
-            <br /><br />
-
-            <input
-                id="sub"
-                type="submit"
-                value="POST!"
-                style="width: 200px; border-radius: 5px; align-content: center"
-            />
-        </form>
+        </div>
     </div>
 </template>
 <script>
