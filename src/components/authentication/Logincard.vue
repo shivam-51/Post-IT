@@ -60,6 +60,10 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .card-container.card {
     max-width: 350px;
@@ -180,4 +184,4 @@
 .btn.btn-signin:focus {
     background-color: rgb(12, 97, 33);
 }
-</style> 
+</style>
