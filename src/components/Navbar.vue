@@ -33,13 +33,13 @@
             <b-button variant="outline-warning" class="mr-3" to="signup">Sign Up</b-button>
             <b-button variant="outline-warning" class="mr-2" to="login">Log In</b-button>
             <!-- <b-nav-item-dropdown right>
-                            <template v-slot:button-content>
-                                <display4>User</display4>
-                            </template>
-                            <b-dropdown-item href="#">Profile</b-dropdown-item>
-                            <b-dropdown-item href="#" to="/About"
-                                >Sign Out</b-dropdown-item
-                            >
+                                <template v-slot:button-content>
+                                    <display4>User</display4>
+                                </template>
+                                <b-dropdown-item href="#">Profile</b-dropdown-item>
+                                <b-dropdown-item href="#" to="/About"
+                                    >Sign Out</b-dropdown-item
+                                >
             </b-nav-item-dropdown>-->
           </b-navbar-nav>
         </b-collapse>
