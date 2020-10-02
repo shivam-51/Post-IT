@@ -33,8 +33,9 @@
 
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
-                    <b-nav-item href="#" to="/addblog">Blogs</b-nav-item>
-                    <b-nav-item href="#" to="/team">Meet the team</b-nav-item>
+                    <b-nav-item href="#" to="/addblog" :class="[currentPage.includes('addblog')?activeClass:'']">Blogs</b-nav-item>
+                    <b-nav-item href="">Thread</b-nav-item>
+                    <b-nav-item href="#" to="/team" :class="[currentPage.includes('team')?activeClass:'']">Meet the team</b-nav-item>
                 </b-navbar-nav>
                 <b-collapse id="nav-collapse" is-nav>
                     <!-- Right aligned nav items -->
@@ -71,7 +72,20 @@
 export default {
     name: "navbar",
     props: { title: String },
+
+    
+    computed:{
+        currentPage(){
+            return this.$route.path;
+        }
+    },
+    data(){
+        return{
+            activeClass:'active'
+        };
+    },
 };
+
 </script>
 
 <style scoped>
@@ -83,4 +97,5 @@ export default {
     display: inline-block;
     margin-right: 2px;
 }
+
 </style>>
