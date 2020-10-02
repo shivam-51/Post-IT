@@ -55,6 +55,7 @@
 .body-of-login {
     /* height: 100%; */
     min-height: 100vh;
+    
     padding: 0;
     background-image: url("../../assets/ocean.jpg");
     background-repeat: no-repeat;
