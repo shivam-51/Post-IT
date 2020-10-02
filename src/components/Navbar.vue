@@ -1,26 +1,6 @@
 <template>
     <div fixed:top class="shadow p-0 bg-white rounded" id="navbar">
         <b-navbar toggleable="lg" type="dark" variant="info">
-            <b-navbar-nav>
-                <!-- Navbar dropdowns -->
-                <b-nav-item-dropdown text="☰" left>
-                    <b-dropdown-item
-                        href="https://www.iiests.ac.in/"
-                        target="_blank"
-                        >IIEST</b-dropdown-item
-                    >
-                    <b-dropdown-item
-                        href="https://www.iiests.ac.in/IIEST/AcaUnitDetails/IT"
-                        target="_blank"
-                        >IT-IIEST</b-dropdown-item
-                    >
-                    <b-dropdown-item
-                        href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit"
-                        target="_blank"
-                        >SOCIT</b-dropdown-item
-                    >
-                </b-nav-item-dropdown>
-            </b-navbar-nav>
             <b-navbar-brand href="#" to="/">
                 <img
                     class="icon"
@@ -33,8 +13,22 @@
 
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
-                    <b-nav-item href="#" to="/addblog" :class="[currentPage.includes('addblog')?activeClass:'']">Blogs</b-nav-item>
-                    <b-nav-item href="#" to="/team" :class="[currentPage.includes('team')?activeClass:'']">Meet the team</b-nav-item>
+                    <b-nav-item
+                        href="#"
+                        to="/addblog"
+                        :class="[
+                            currentPage.includes('addblog') ? activeClass : '',
+                        ]"
+                        >Blogs</b-nav-item
+                    >
+                    <b-nav-item
+                        href="#"
+                        to="/team"
+                        :class="[
+                            currentPage.includes('team') ? activeClass : '',
+                        ]"
+                        >Meet the team</b-nav-item
+                    >
                 </b-navbar-nav>
                 <b-collapse id="nav-collapse" is-nav>
                     <!-- Right aligned nav items -->
@@ -60,6 +54,26 @@
                                 >Sign Out</b-dropdown-item
                             >
                         </b-nav-item-dropdown> -->
+                        <!-- </b-navbar-nav>
+                    <b-navbar-nav> -->
+                        <!-- Navbar dropdowns -->
+                        <b-nav-item-dropdown text="☰" right>
+                            <b-dropdown-item
+                                href="https://www.iiests.ac.in/"
+                                target="_blank"
+                                >IIEST</b-dropdown-item
+                            >
+                            <b-dropdown-item
+                                href="https://www.iiests.ac.in/IIEST/AcaUnitDetails/IT"
+                                target="_blank"
+                                >IT-IIEST</b-dropdown-item
+                            >
+                            <b-dropdown-item
+                                href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit"
+                                target="_blank"
+                                >SOCIT</b-dropdown-item
+                            >
+                        </b-nav-item-dropdown>
                     </b-navbar-nav>
                 </b-collapse>
             </b-collapse>
@@ -72,19 +86,17 @@ export default {
     name: "navbar",
     props: { title: String },
 
-    
-    computed:{
-        currentPage(){
+    computed: {
+        currentPage() {
             return this.$route.path;
-        }
+        },
     },
-    data(){
-        return{
-            activeClass:'active'
+    data() {
+        return {
+            activeClass: "active",
         };
     },
 };
-
 </script>
 
 <style scoped>
@@ -96,5 +108,4 @@ export default {
     display: inline-block;
     margin-right: 2px;
 }
-
 </style>>
