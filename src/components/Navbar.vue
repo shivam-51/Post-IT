@@ -34,7 +34,6 @@
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
                     <b-nav-item href="#" to="/addblog" :class="[currentPage.includes('addblog')?activeClass:'']">Blogs</b-nav-item>
-                    <b-nav-item href="">Thread</b-nav-item>
                     <b-nav-item href="#" to="/team" :class="[currentPage.includes('team')?activeClass:'']">Meet the team</b-nav-item>
                 </b-navbar-nav>
                 <b-collapse id="nav-collapse" is-nav>
