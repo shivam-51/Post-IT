@@ -34,7 +34,6 @@
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
                     <b-nav-item href="#" to="/addblog">Blogs</b-nav-item>
-                    <b-nav-item href="">Thread</b-nav-item>
                     <b-nav-item href="#" to="/team">Meet the team</b-nav-item>
                 </b-navbar-nav>
                 <b-collapse id="nav-collapse" is-nav>
