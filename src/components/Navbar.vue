@@ -72,7 +72,7 @@ export default {
     name: "navbar",
     props: { title: String },
 
-    
+
     computed:{
         currentPage(){
             return this.$route.path;
@@ -88,6 +88,9 @@ export default {
 </script>
 
 <style scoped>
+#navbar {
+  margin-top: 5px;
+}
 .bg-info {
     background-color: #1e0c42 !important;
     padding: 0.7rem;
