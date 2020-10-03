@@ -23,8 +23,9 @@ npm run lint
 # A big shoutout to all our contributors :alien:
 | Name          | Github handle |
 | ------------- |:-------------:|
-| Shivam Singh  | [shivam-51](https://github.com/shivam-51/) |
+| Shivam Singh  | [shivam-51](https://github.com/shivam-51/)    |
 | Divyansh Masiwal| [BAAHUBALI7781](https://github.com/BAAHUBALI7781/)  |
+| Ritika Shrestha |  [RitikaShrestha-me](https://github.com/RitikaShrestha-me)  |
 
 
 ## Contributing
