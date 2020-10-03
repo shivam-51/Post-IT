@@ -161,16 +161,6 @@
             box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.3); 
         }
         .our_team:hover{
-            background-color:#f7f5ec;
-            text-align:center;
-            /* overflow:hidden; */
-            position: relative;
-            margin:0px 20px;
-            padding:20px 0 50px;
-            width:18%;
-            -moz-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3);
-            -webkit-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3); 
-            box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.3); 
             border-radius: 4px;
         }
 
@@ -250,11 +240,7 @@
               color:black;
               transition:all 0.3s ease 0s;
         }  
-        /*
-         .our_team .social li a:hover{
-            
-           
-        } */
+        
 
         
         @media (min-width: 1025px){
