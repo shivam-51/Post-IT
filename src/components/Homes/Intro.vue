@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-md-6 order-2">
                         <div class="floating component">
-                            <img class="image" src="@/assets/PIlogo.png" />
+                            <img class="image" src="@/assets/PIlogodark.png" />
                         </div>
                     </div>
                     <div class="col-md-6 mt-3 order-1 text-center mt-5">

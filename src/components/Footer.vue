@@ -1,5 +1,5 @@
 <template>
-    <footer id="main-footer">
+    <footer fixed:bottom id="main-footer">
         <div class="container">
             <div class="row">
                 <div class="col text-center py-4" style="color: white">
@@ -20,9 +20,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 footer {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     height: 300px;
     background-color: #162029;
 }
