@@ -15,9 +15,9 @@
                 </div>
                 <ul class="social">
                     <li><a href="#" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#" target="_blank" title="Facebook Page"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#" target="_blank" title="Facebook Page"><i class="fas fa-envelope"></i></a></li>
-                    <li><a href="#" target="_blank" title="Facebook Page"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="#" target="_blank" title="Instagram Page"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" target="_blank" title="Email Page"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="#" target="_blank" title="Linked-in Page"><i class="fab fa-linkedin"></i></a></li>
 
                 </ul>
             
@@ -36,9 +36,9 @@
                 </div>
                 <ul class="social">
                     <li><a href="https://www.facebook.com/divyansh.masiwal.7" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/divyanshmasiwal07/" target="_blank" title="Facebook Page"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="mailto:divyanshm1609@gmail.com" target="_blank" title="Facebook Page"><i class="fas fa-envelope"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/divyansh-masiwal-3ba250188/" target="_blank" title="Facebook Page"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://www.instagram.com/divyanshmasiwal07/" target="_blank" title="Instagram Page"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="mailto:divyanshm1609@gmail.com" target="_blank" title="Email Page"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/divyansh-masiwal-3ba250188/" target="_blank" title="Linked-in Page"><i class="fab fa-linkedin"></i></a></li>
 
                 </ul>
             
@@ -283,11 +283,6 @@
         {
             .container{
                 flex-direction: column;
-
-            }
-            .container1{
-                flex-direction: row;
-                flex-wrap: wrap;
             }
             .our_team{
                 width:80%;
