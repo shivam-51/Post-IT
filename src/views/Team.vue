@@ -93,11 +93,9 @@
         .body{
             margin:0;
             padding:0px;
-            height:400px;
-            
             box-sizing:border-box;
             font-family:sans-serif;
-
+            padding: 10vh 0;
         }
         .container{
             display:flex;
@@ -168,17 +166,17 @@
             height:35px;
             position:absolute;
             background:crimson;
-            bottom:800px;
+            bottom: 100%;
             left:0;
+            opacity: 0;
             transition:all 0.3s ease 0s;
         }
         .our_team:hover .social{
-            bottom:0;
+            bottom: 0;
+            opacity: 1;
         }
         .our_team .social li{
-            display:inline-block;
-        
-             
+            display:inline-block;    
         }
         .our_team .social li>a{
               text-decoration: none;
@@ -204,7 +202,26 @@
            
         } */
 
-        @media (max-width: 720px)
+        
+        @media (min-width: 1025px){
+            .body{
+                min-height: 50vh;
+            }
+        }
+
+        @media (max-width: 1024px)
+        {
+            .container{
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .our_team{
+                width:40%;
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 767px)
         {
             .container{
                 flex-direction: column;
@@ -215,8 +232,4 @@
                 margin-top: 30px;
             }
         }
-        
-
-
-
     </style>
