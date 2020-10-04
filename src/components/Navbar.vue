@@ -1,6 +1,6 @@
 <template>
     <div fixed:top class="shadow p-0 bg-white rounded" id="navbar">
-        <b-navbar toggleable="lg" type="dark" variant="info">
+        <b-navbar toggleable="lg" fixed="top" type="dark" variant="info">
             <b-navbar-nav>
                 <!-- Navbar dropdowns -->
                 <b-nav-item-dropdown text="☰" left>
@@ -35,7 +35,7 @@
                 <b-navbar-nav>
                     <b-nav-item href="#" to="/addblog">Blogs</b-nav-item>
                     <b-nav-item href="">Thread</b-nav-item>
-                    <b-nav-item href="#" to="/team">Meet the team</b-nav-item>
+                    <b-nav-item href="#" to="/Team">Meet the team</b-nav-item>
                 </b-navbar-nav>
                 <b-collapse id="nav-collapse" is-nav>
                     <!-- Right aligned nav items -->
@@ -84,4 +84,5 @@ export default {
     display: inline-block;
     margin-right: 2px;
 }
+
 </style>>

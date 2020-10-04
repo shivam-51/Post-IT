@@ -1,84 +1,85 @@
 <template>
-   
-    <div class=body>
+   <div class=body>
         <h1 class=heading>Meet the Doers and Builders!</h1>
         <br>
         <div class=container>
-            <div class=our_team>
-                <div class=pic>
-                    <img src="../assets/our+team/Divyansh_Masiwal.jpg" alt="error" style="width:150px;height:150px;">
-                </div>
-                <div class=team-content>
-                    <h4 class=title>Divyansh Masiwal</h4>
-                    <span class="post">Frontend Developer</span>
-                </div>
-                <ul class="social">
-                    <li><a href="https://www.facebook.com/divyansh.masiwal.7" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/divyanshmasiwal07/" target="_blank" title="Facebook Page"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="mailto:divyanshm1609@gmail.com" target="_blank" title="Facebook Page"><i class="fas fa-envelope"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/divyansh-masiwal-3ba250188/" target="_blank" title="Facebook Page"><i class="fab fa-linkedin"></i></a></li>
+                    <div class="our_team">
+                        <div class="pic">
+                            <img src="../assets/our+team/Divyansh_Masiwal.jpg" alt="error" style="width:150px;height:150px;">
+                        </div>
+                        <div class=team-content>
+                            <h4 class=title>Divyansh Masiwal</h4>
+                            <span class="post">Frontend Developer</span>
+                        </div>
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/divyansh.masiwal.7" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/divyanshmasiwal07/" target="_blank" title="Facebook Page"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="mailto:divyanshm1609@gmail.com" target="_blank" title="Facebook Page"><i class="fas fa-envelope"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/divyansh-masiwal-3ba250188/" target="_blank" title="Facebook Page"><i class="fab fa-linkedin"></i></a></li>
 
-                </ul>
-            
+                        </ul>
+                    </div>
+                
+                    <div class="our_team">
+                        <div class="pic">
+                            <img src="../assets/our+team/shivam.jpeg" alt="error" style="width:150px;height:150px;">
+                        </div>
+                        <div class=team-content>
+                            <h4 class=title>Shivam Kumar Singh</h4>
+                            <span class="post">Frontend Developer</span>
+                        </div>
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/heyshivam51" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/shivam_.singh_" target="_blank" title="Instagram Page"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="mailto:shivamhere247@gmail.com" target="_blank" title="Email Page"><i class="fas fa-envelope"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/shivamhere" target="_blank" title="Linked-in Page"><i class="fab fa-linkedin"></i></a></li>
 
-            </div>
-            <div class=our_team>
-                <div class=pic>
-                    <img src="../assets/our+team/shivam.jpeg" alt="error" style="width:150px;height:150px;">
-                </div>
-                <div class=team-content>
-                    <h4 class=title>Shivam Kumar Singh</h4>
-                    <span class="post">Frontend Developer</span>
-                </div>
-                <ul class="social">
-                    <li><a href="https://www.facebook.com/heyshivam51" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/shivam_.singh_" target="_blank" title="Instagram Page"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="mailto:shivamhere247@gmail.com" target="_blank" title="Email Page"><i class="fas fa-envelope"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/shivamhere" target="_blank" title="Linked-in Page"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    
 
-                </ul>
-            
+                    </div>
+                
+                    <div class="our_team">
+                        <div class="pic">
+                            <img src="../assets/our+team/pran.jpg" alt="error" style="width:150px;height:150px;">
+                        </div>
+                        <div class=team-content>
+                            <h4 class=title>Praneetha Narayanasetti</h4>
+                            <span class="post">Full Stack Developer</span>
+                        </div>
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/praneethanarayanasetti" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/pranee_hani_3108" target="_blank" title="Instagram Page"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="mailto:praneethanarayanasetti@gmail.com" target="_blank" title="Email Page"><i class="fas fa-envelope"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/praneetha-narayanasetti-9270b6190" target="_blank" title="Linked-in Page"><i class="fab fa-linkedin"></i></a></li>
 
-            </div>
-            <div class=our_team>
-                <div class=pic>
-                    <img src="../assets/our+team/pran.jpg" alt="error" style="width:150px;height:150px;">
-                </div>
-                <div class=team-content>
-                    <h4 class=title>Praneetha Narayanasetti</h4>
-                    <span class="post">Full Stack Developer</span>
-                </div>
-                <ul class="social">
-                    <li><a href="https://www.facebook.com/praneethanarayanasetti" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/pranee_hani_3108" target="_blank" title="Instagram Page"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="mailto:praneethanarayanasetti@gmail.com" target="_blank" title="Email Page"><i class="fas fa-envelope"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/praneetha-narayanasetti-9270b6190" target="_blank" title="Linked-in Page"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    
 
-                </ul>
-            
+                    </div>
+                
+                    <div class="our_team">
+                        <div class="pic">
+                            <img src="../assets/our+team/adi.jpg" alt="error" style="width:150px;height:150px;">
+                        </div>
+                        <div class=team-content>
+                            <h4 class=title>Aditya Agarwal</h4>
+                            <span class="post">Frontend Developer</span>
+                        </div>
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/profile.php?id=100008020094550" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/adi_2.6/?hl=en" target="_blank" title="Instagram Page"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="mailto:adityaagarwal109@gmail.com" target="_blank" title="Email Page"><i class="fas fa-envelope"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/aditya-agarwal-b6242b192/" target="_blank" title="Linked-in Page"><i class="fab fa-linkedin"></i></a></li>
 
-            </div>
-            <div class=our_team>
-                <div class=pic>
-                    <img src="../assets/our+team/adi.jpg" alt="error" style="width:150px;height:150px;">
-                </div>
-                <div class=team-content>
-                    <h4 class=title>Aditya Agarwal</h4>
-                    <span class="post">Frontend Developer</span>
-                </div>
-                <ul class="social">
-                    <li><a href="https://www.facebook.com/profile.php?id=100008020094550" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/adi_2.6/?hl=en" target="_blank" title="Instagram Page"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="mailto:adityaagarwal109@gmail.com" target="_blank" title="Email Page"><i class="fas fa-envelope"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/aditya-agarwal-b6242b192/" target="_blank" title="Linked-in Page"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    
 
-                </ul>
-            
-
-            </div>
+                
+                    </div>
              
 
-        </div>
+                </div>
         
     </div>
     
@@ -170,7 +171,7 @@
             background:crimson;
             bottom:800px;
             left:0;
-            transition:all 0.3s ease 0s;
+            transition:all 0.5s ease 0s;
         }
         .our_team:hover .social{
             bottom:0;
@@ -206,10 +207,7 @@
 
         @media (max-width: 720px)
         {
-            .container{
-                flex-direction: column;
-
-            }
+           
             .our_team{
                 width:80%;
                 margin-top: 30px;
