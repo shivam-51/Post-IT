@@ -1,5 +1,5 @@
 <template>
-  <div fixed:top class="shadow p-0 bg-white rounded" id="navbar">
+  <div fixed:top class=" bg-white rounded" id="navbar">
     <b-navbar toggleable="lg" type="dark" variant="info">
       <b-navbar-brand href="#" to="/">
         <img class="icon" src="../../src/assets/PIlogo.png" width="39" />
@@ -11,8 +11,8 @@
         <b-navbar-nav>
           <b-nav-item
             href="#"
-            to="/addblog"
-            :class="[currentPage.includes('addblog') ? activeClass : '']"
+            to="/allblog"
+            :class="[currentPage.includes('allblog') ? activeClass : '']"
             >Blogs</b-nav-item
           >
           <b-nav-item
@@ -92,14 +92,10 @@ export default {
 </script>
 
 <style scoped>
-#navbar {
-  -webkit-box-shadow: -1px 13px 15px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 13px 15px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 13px 15px 0px rgba(0, 0, 0, 0.75);
-}
 .bg-info {
   background-color: #1e0c42 !important;
   padding: 0.7rem;
+  box-shadow: 2px 2px 8px;
 }
 .icon {
   display: inline-block;

@@ -94,10 +94,6 @@ export default {
   margin-left: 20px;
   border: 3px solid black;
 }
-#div:hover {
-  background-color: black;
-  color: white;
-}
 #div1 {
   width: 500px;
   height: 117px;
@@ -114,10 +110,6 @@ export default {
   margin-left: 20px;
   border: 3px solid black;
 }
-#div1:hover {
-  background-color: black;
-  color: white;
-}
 #sub {
   margin-left: 45px;
   /* background-color: plum; */
@@ -126,10 +118,6 @@ export default {
   border: 3px solid black;
   background-color: white;
   color: black;
-}
-#sub:hover {
-  background-color: black;
-  color: white;
 }
 .main_nav {
   background-color: #563d7c;
@@ -152,9 +140,6 @@ export default {
   padding: 15px;
   font-family: san-serif;
   font-size: 18px;
-}
-.main_nav > ul > li > a:hover {
-  color: tomato;
 }
 .icon {
   display: inline-block;
