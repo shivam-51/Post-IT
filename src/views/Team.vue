@@ -1,9 +1,31 @@
 <template>
    
     <div class=body>
-        <h1 class=heading>Meet the Doers and Builders!</h1>
+        <h1 class=heading style="font-size:55px;font-family:san-serif;margin-top:0px;">Meet the Doers and Builders!</h1>
         <br>
-        <div class=container>
+        
+        <div class=container1>
+            <div class=our_team style="width:230px;">
+                <div class=pic>
+                    <img src="../assets/our+team/4.jpg" alt="error" style="width:150px;height:150px;">
+                </div>
+                <div class=team-content>
+                    <h4 class=title>Surajit Kumar Roy</h4>
+                    <span class="post">Project Instructor</span>
+                </div>
+                <ul class="social">
+                    <li><a href="#" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#" target="_blank" title="Instagram Page"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" target="_blank" title="Email Page"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="#" target="_blank" title="Linked-in Page"><i class="fab fa-linkedin"></i></a></li>
+
+                </ul>
+            
+
+            </div>
+        </div>
+        <!-- <div class=container>   -->
+            <div class=container>
             <div class=our_team>
                 <div class=pic>
                     <img src="../assets/our+team/Divyansh_Masiwal.jpg" alt="error" style="width:150px;height:150px;">
@@ -14,9 +36,9 @@
                 </div>
                 <ul class="social">
                     <li><a href="https://www.facebook.com/divyansh.masiwal.7" target="_blank" title="Facebook Page"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/divyanshmasiwal07/" target="_blank" title="Facebook Page"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="mailto:divyanshm1609@gmail.com" target="_blank" title="Facebook Page"><i class="fas fa-envelope"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/divyansh-masiwal-3ba250188/" target="_blank" title="Facebook Page"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://www.instagram.com/divyanshmasiwal07/" target="_blank" title="Instagram Page"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="mailto:divyanshm1609@gmail.com" target="_blank" title="Email Page"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/divyansh-masiwal-3ba250188/" target="_blank" title="Linked-in Page"><i class="fab fa-linkedin"></i></a></li>
 
                 </ul>
             
@@ -95,20 +117,36 @@
             padding:0px;
             box-sizing:border-box;
             font-family:sans-serif;
-            padding: 10vh 0;
+            /* padding: 10vh 0; */
+            background:linear-gradient(to bottom right,white,#bcbdc4);
+            padding-bottom: 10px;
+            padding-top: 10px;
         }
         .container{
             display:flex;
             align-items:center;
             justify-content: center;
+            margin:auto;
+            margin-top:50px;
+            
+        }
+        
+
+        .container1{
+            display:flex;
+            align-items:center;
+            justify-content: center;
             width:100%;
             margin:auto;
+            /* width:px; */
         }
 
         .heading{
             color:black;
             font-family: sans-serif;
-            top:20px;
+            /* top:10px; */
+            padding:0px;
+            font:40px;
         }
         .our_team{
             background-color:#f7f5ec;
@@ -116,8 +154,14 @@
             /* overflow:hidden; */
             position: relative;
             margin:0px 20px;
-            padding:20px 0 40px;
-            width:30%;
+            padding:20px 0 50px;
+            width:18%;
+            -moz-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3); 
+            box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.3); 
+        }
+        .our_team:hover{
+            border-radius: 4px;
         }
 
         .our_team .pic{
@@ -143,7 +187,7 @@
         }
         
         .our_team .title{
-            font-size:18px;
+            font-size:15px;
             font-weight:700;
             color:gray;
             margin-bottom:30px;
@@ -157,7 +201,7 @@
             display:block;
             font-size:14px;
             color:gray;
-            /* margin-top:25px; */
+            margin-top:0px;
         }
         .social{
             width:100%;
@@ -196,11 +240,7 @@
               color:black;
               transition:all 0.3s ease 0s;
         }  
-        /*
-         .our_team .social li a:hover{
-            
-           
-        } */
+        
 
         
         @media (min-width: 1025px){
@@ -215,6 +255,10 @@
                 flex-direction: row;
                 flex-wrap: wrap;
             }
+            .container1{
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
             .our_team{
                 width:40%;
                 margin-top: 30px;
@@ -225,7 +269,6 @@
         {
             .container{
                 flex-direction: column;
-
             }
             .our_team{
                 width:80%;
