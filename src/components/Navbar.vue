@@ -92,6 +92,11 @@ export default {
 </script>
 
 <style scoped>
+#navbar {
+  -webkit-box-shadow: -1px 13px 15px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 13px 15px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 13px 15px 0px rgba(0, 0, 0, 0.75);
+}
 .bg-info {
   background-color: #1e0c42 !important;
   padding: 0.7rem;
