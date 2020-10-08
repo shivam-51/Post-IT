@@ -9,7 +9,7 @@
     <br />
 
     <div class="container1">
-      <div class="our_team" style="width:230px;">
+      <div class="our_team" style="width:300px" >
         <div class="pic">
           <img
             src="../assets/team/SRsir.jpg"
@@ -20,6 +20,10 @@
         <div class="team-content">
           <h4 class="title">Surajit Kumar Roy</h4>
           <span class="post">Project Instructor</span>
+          <span class="post">Associate Professor, Information Technology</span>
+          <span class="post">IIEST Shibpur</span>
+
+
         </div>
         <ul class="social">
           <li>
@@ -28,8 +32,8 @@
             ></a>
           </li>
           <li>
-            <a href="#" target="_blank" title="Instagram Page"
-              ><i class="fab fa-instagram"></i
+            <a href="#" target="_blank" title="Github"
+              ><i class="fab fa-github"></i
             ></a>
           </li>
           <li>
@@ -70,10 +74,10 @@
           </li>
           <li>
             <a
-              href="https://www.instagram.com/divyanshmasiwal07/"
+              href="https://github.com/BAAHUBALI7781/"
               target="_blank"
-              title="Instagram Page"
-              ><i class="fab fa-instagram"></i
+              title="Github"
+              ><i class="fab fa-github"></i
             ></a>
           </li>
           <li>
@@ -104,7 +108,7 @@
         </div>
         <div class="team-content">
           <h4 class="title">Shivam Kumar Singh</h4>
-          <span class="post">Frontend Developer</span>
+          <span class="post">Full Stack Developer</span>
         </div>
         <ul class="social">
           <li>
@@ -117,10 +121,10 @@
           </li>
           <li>
             <a
-              href="https://www.instagram.com/shivam_.singh_"
+              href="https://github.com/shivam-51/"
               target="_blank"
-              title="Instagram Page"
-              ><i class="fab fa-instagram"></i
+              title="Github"
+              ><i class="fab fa-github"></i
             ></a>
           </li>
           <li>
@@ -164,10 +168,10 @@
           </li>
           <li>
             <a
-              href="https://www.instagram.com/pranee_hani_3108"
+              href="https://github.com/praneetha3108/"
               target="_blank"
-              title="Instagram Page"
-              ><i class="fab fa-instagram"></i
+              title="Github"
+              ><i class="fab fa-github"></i
             ></a>
           </li>
           <li>
@@ -211,10 +215,10 @@
           </li>
           <li>
             <a
-              href="https://www.instagram.com/adi_2.6/?hl=en"
+              href="https://github.com/aditya2610/"
               target="_blank"
               title="Instagram Page"
-              ><i class="fab fa-instagram"></i
+              ><i class="fab fa-github"></i
             ></a>
           </li>
           <li>
@@ -266,7 +270,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  /* width: 100%; */
   margin: auto;
   /* width:px; */
 }
@@ -285,7 +289,7 @@ export default {
   position: relative;
   margin: 0px 20px;
   padding: 20px 0 50px;
-  width: 18%;
+  
   -moz-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.3);
@@ -293,7 +297,9 @@ export default {
 .our_team:hover {
   border-radius: 4px;
 }
-
+.container .our_team{
+  width:200px;
+}
 .our_team .pic {
   display: inline-block;
   width: 150px;
@@ -386,7 +392,7 @@ export default {
     flex-wrap: wrap;
   }
   .our_team {
-    width: 40%;
+    width: 18%;
     margin-top: 30px;
   }
 }
