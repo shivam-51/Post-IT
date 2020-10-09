@@ -33,8 +33,8 @@
             ></a>
           </li>
           <li>
-            <a v-bind:href="member.insta_link" target="_blank"
-              ><i class="fab fa-instagram"></i
+            <a v-bind:href="member.github_link" target="_blank"
+              ><i class="fab fa-github"></i
             ></a>
           </li>
           <li>
@@ -64,39 +64,42 @@ export default {
           name: "Divyansh Masiwal",
           role: "Front End Developer",
           facebook_link: "https://www.facebook.com/divyansh.masiwal.7",
-          insta_link: "https://www.brazzers.com",
-          mail_id: "https://www.brazzers.com",
-          linkedin_link: "https://www.brazzers.com"
+          github_link: "https://github.com/BAAHUBALI7781/",
+          mail_id: "mailto:divyanshm1609@gmail.co",
+          linkedin_link:
+            "https://www.linkedin.com/in/divyansh-masiwal-3ba250188/"
         },
         {
           id: "2",
           pic_name: "Shivam.jpg",
           name: "Shivam Singh",
           role: "Full Stack Developer",
-          facebook_link: "https://www.brazzers.com",
-          insta_link: "https://www.brazzers.com",
-          mail_id: "https://www.brazzers.com",
-          linkedin_link: "https://www.brazzers.com"
+          facebook_link: "https://www.facebook.com/heyshivam51",
+          github_link: "https://github.com/shivam-51/",
+          mail_id: "mailto:shivamhere247@gmail.com",
+          linkedin_link: "https://www.linkedin.com/in/shivamhere"
         },
         {
           id: "3",
           pic_name: "Pran.jpg",
           name: "Praneetha",
           role: "Full Stack Developer",
-          facebook_link: "https://www.brazzers.com",
-          insta_link: "https://www.brazzers.com",
-          mail_id: "https://www.brazzers.com",
-          linkedin_link: "https://www.brazzers.com"
+          facebook_link: "https://www.facebook.com/praneethanarayanasetti",
+          github_link: "https://github.com/praneetha3108/",
+          mail_id: "mailto:praneethanarayanasetti@gmail.com",
+          linkedin_link:
+            "https://www.linkedin.com/in/praneetha-narayanasetti-9270b6190"
         },
         {
           id: "4",
           pic_name: "Adi.jpg",
           name: "Aditya Agarwal",
           role: "Front End Developer",
-          facebook_link: "https://www.brazzers.com",
-          insta_link: "https://www.brazzers.com",
-          mail_id: "https://www.brazzers.com",
-          linkedin_link: "https://www.brazzers.com"
+          facebook_link:
+            "https://www.facebook.com/profile.php?id=100008020094550",
+          github_link: "https://github.com/aditya2610/",
+          mail_id: "mailto:adityaagarwal109@gmail.com",
+          linkedin_link: "https://www.linkedin.com/in/aditya-agarwal-b6242b192/"
         }
       ]
     };
