@@ -1,239 +1,49 @@
 <template>
   <div class="body">
-    <h1
-      class="heading"
-      style="font-size:55px;font-family:san-serif;margin-top:0px;"
-    >
-      Meet the Doers and Builders!
+    <h1 class="display-4 mt-3">
+      Meet the Builders of Post-IT!
     </h1>
     <br />
-
-    <div class="container1">
-      <div class="our_team" style="width:300px" >
+    <div class="container">
+      <div class="our_team" style="width:370px; height:320px;">
         <div class="pic">
-          <img
-            src="../assets/team/SRsir.jpg"
-            alt="error"
-            style="width:150px;height:150px;"
-          />
+          <img src="../assets/team/SRsir.jpg" />
         </div>
         <div class="team-content">
           <h4 class="title">Surajit Kumar Roy</h4>
           <span class="post">Project Instructor</span>
           <span class="post">Associate Professor, Information Technology</span>
           <span class="post">IIEST Shibpur</span>
-
-
         </div>
-        <ul class="social">
-          <li>
-            <a href="#" target="_blank" title="Facebook Page"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" target="_blank" title="Github"
-              ><i class="fab fa-github"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" target="_blank" title="Email Page"
-              ><i class="fas fa-envelope"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" target="_blank" title="Linked-in Page"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </li>
-        </ul>
       </div>
     </div>
-    <!-- <div class=container>   -->
     <div class="container">
-      <div class="our_team">
+      <div class="our_team" v-for="member in members" :key="member.id">
         <div class="pic">
-          <img
-            src="../assets/team/Divyansh_Masiwal.jpg"
-            alt="error"
-            style="width:150px;height:150px;"
-          />
+          <img :src="require(`@/assets/team/${member.pic_name}`)" />
         </div>
         <div class="team-content">
-          <h4 class="title">Divyansh Masiwal</h4>
-          <span class="post">Frontend Developer</span>
+          <h4 class="title">{{ member.name }}</h4>
+          <span class="post">{{ member.role }}</span>
         </div>
         <ul class="social">
           <li>
-            <a
-              href="https://www.facebook.com/divyansh.masiwal.7"
-              target="_blank"
-              title="Facebook Page"
+            <a v-bind:href="member.facebook_link" target="_blank"
               ><i class="fab fa-facebook"></i
             ></a>
           </li>
           <li>
-            <a
-              href="https://github.com/BAAHUBALI7781/"
-              target="_blank"
-              title="Github"
+            <a v-bind:href="member.github_link" target="_blank"
               ><i class="fab fa-github"></i
             ></a>
           </li>
           <li>
-            <a
-              href="mailto:divyanshm1609@gmail.com"
-              target="_blank"
-              title="Email Page"
+            <a v-bind:href="member.facebook_link" target="_blank"
               ><i class="fas fa-envelope"></i
             ></a>
           </li>
           <li>
-            <a
-              href="https://www.linkedin.com/in/divyansh-masiwal-3ba250188/"
-              target="_blank"
-              title="Linked-in Page"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </li>
-        </ul>
-      </div>
-      <div class="our_team">
-        <div class="pic">
-          <img
-            src="../assets/team/shivam.jpeg"
-            alt="error"
-            style="width:150px;height:150px;"
-          />
-        </div>
-        <div class="team-content">
-          <h4 class="title">Shivam Kumar Singh</h4>
-          <span class="post">Full Stack Developer</span>
-        </div>
-        <ul class="social">
-          <li>
-            <a
-              href="https://www.facebook.com/heyshivam51"
-              target="_blank"
-              title="Facebook Page"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/shivam-51/"
-              target="_blank"
-              title="Github"
-              ><i class="fab fa-github"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="mailto:shivamhere247@gmail.com"
-              target="_blank"
-              title="Email Page"
-              ><i class="fas fa-envelope"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/shivamhere"
-              target="_blank"
-              title="Linked-in Page"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </li>
-        </ul>
-      </div>
-      <div class="our_team">
-        <div class="pic">
-          <img
-            src="../assets/team/pran.jpg"
-            alt="error"
-            style="width:150px;height:150px;"
-          />
-        </div>
-        <div class="team-content">
-          <h4 class="title">Praneetha Narayanasetti</h4>
-          <span class="post">Full Stack Developer</span>
-        </div>
-        <ul class="social">
-          <li>
-            <a
-              href="https://www.facebook.com/praneethanarayanasetti"
-              target="_blank"
-              title="Facebook Page"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/praneetha3108/"
-              target="_blank"
-              title="Github"
-              ><i class="fab fa-github"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="mailto:praneethanarayanasetti@gmail.com"
-              target="_blank"
-              title="Email Page"
-              ><i class="fas fa-envelope"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/praneetha-narayanasetti-9270b6190"
-              target="_blank"
-              title="Linked-in Page"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </li>
-        </ul>
-      </div>
-      <div class="our_team">
-        <div class="pic">
-          <img
-            src="../assets/team/adi.jpg"
-            alt="error"
-            style="width:150px;height:150px;"
-          />
-        </div>
-        <div class="team-content">
-          <h4 class="title">Aditya Agarwal</h4>
-          <span class="post">Frontend Developer</span>
-        </div>
-        <ul class="social">
-          <li>
-            <a
-              href="https://www.facebook.com/profile.php?id=100008020094550"
-              target="_blank"
-              title="Facebook Page"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/aditya2610/"
-              target="_blank"
-              title="Instagram Page"
-              ><i class="fab fa-github"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="mailto:adityaagarwal109@gmail.com"
-              target="_blank"
-              title="Email Page"
-              ><i class="fas fa-envelope"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/aditya-agarwal-b6242b192/"
-              target="_blank"
-              title="Linked-in Page"
+            <a v-bind:href="member.facebook_link" target="_blank"
               ><i class="fab fa-linkedin"></i
             ></a>
           </li>
@@ -244,7 +54,56 @@
 </template>
 <script>
 export default {
-  name: "team"
+  name: "team",
+  data() {
+    return {
+      members: [
+        {
+          id: "1",
+          pic_name: "Divyansh_Masiwal.jpg",
+          name: "Divyansh Masiwal",
+          role: "Front End Developer",
+          facebook_link: "https://www.facebook.com/divyansh.masiwal.7",
+          github_link: "https://github.com/BAAHUBALI7781/",
+          mail_id: "mailto:divyanshm1609@gmail.co",
+          linkedin_link:
+            "https://www.linkedin.com/in/divyansh-masiwal-3ba250188/"
+        },
+        {
+          id: "2",
+          pic_name: "Shivam.jpg",
+          name: "Shivam Singh",
+          role: "Full Stack Developer",
+          facebook_link: "https://www.facebook.com/heyshivam51",
+          github_link: "https://github.com/shivam-51/",
+          mail_id: "mailto:shivamhere247@gmail.com",
+          linkedin_link: "https://www.linkedin.com/in/shivamhere"
+        },
+        {
+          id: "3",
+          pic_name: "Pran.jpg",
+          name: "Praneetha",
+          role: "Full Stack Developer",
+          facebook_link: "https://www.facebook.com/praneethanarayanasetti",
+          github_link: "https://github.com/praneetha3108/",
+          mail_id: "mailto:praneethanarayanasetti@gmail.com",
+          linkedin_link:
+            "https://www.linkedin.com/in/praneetha-narayanasetti-9270b6190"
+        },
+        {
+          id: "4",
+          pic_name: "Adi.jpg",
+          name: "Aditya Agarwal",
+          role: "Front End Developer",
+          facebook_link:
+            "https://www.facebook.com/profile.php?id=100008020094550",
+          github_link: "https://github.com/aditya2610/",
+          mail_id: "mailto:adityaagarwal109@gmail.com",
+          linkedin_link: "https://www.linkedin.com/in/aditya-agarwal-b6242b192/"
+        }
+      ]
+    };
+  }
 };
 </script>
 <style scoped>
@@ -253,7 +112,6 @@ export default {
   padding: 0px;
   box-sizing: border-box;
   font-family: sans-serif;
-  /* padding: 10vh 0; */
   background: linear-gradient(to bottom right, white, #bcbdc4);
   padding-bottom: 10px;
   padding-top: 10px;
@@ -264,32 +122,18 @@ export default {
   justify-content: center;
   margin: auto;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.container1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* width: 100%; */
-  margin: auto;
-  /* width:px; */
-}
-
-.heading {
-  color: black;
-  font-family: sans-serif;
-  /* top:10px; */
-  padding: 0px;
-  font: 40px;
-}
 .our_team {
   background-color: #f7f5ec;
   text-align: center;
+  width: 210px;
   /* overflow:hidden; */
   position: relative;
   margin: 0px 20px;
   padding: 20px 0 50px;
-  
+
   -moz-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.3);
@@ -297,21 +141,16 @@ export default {
 .our_team:hover {
   border-radius: 4px;
 }
-.container .our_team{
-  width:200px;
-}
 .our_team .pic {
   display: inline-block;
-  width: 150px;
-  height: 150px;
   margin-bottom: 0px;
   z-index: 1;
   position: relative;
 }
 
 .our_team .pic img {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   transform: scale(1);
   transition: all 0.9s ease 0;
@@ -324,8 +163,8 @@ export default {
 .our_team .title {
   font-size: 15px;
   font-weight: 700;
-  color: gray;
   margin-bottom: 30px;
+  color: #190f77;
   /* padding:10px; */
   padding-top: 10px;
   padding-bottom: 7px;
@@ -334,8 +173,7 @@ export default {
 }
 .our_team .post {
   display: block;
-  font-size: 14px;
-  color: gray;
+  font-size: 17px;
   margin-top: 0px;
 }
 .social {
@@ -359,16 +197,6 @@ export default {
 }
 .our_team .social li > a {
   text-decoration: none;
-  display: block;
-  padding: 7px;
-  font-size: 17px;
-  color: black;
-  transition: all 0.3s ease 0s;
-}
-.our_team .social li > i {
-  text-decoration: none;
-
-  /* bottom-height: */
   display: block;
   padding: 7px;
   font-size: 17px;
