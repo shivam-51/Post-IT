@@ -56,6 +56,8 @@
     /* height: 100%; */
     min-height: 100vh;
     padding: 0;
+    padding-top: 100px;
+    padding-bottom:20px;
     background-image: url("../../assets/ocean.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
