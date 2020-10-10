@@ -3,7 +3,7 @@
     <div>
       <!--Step 1:Adding HTML-->
       <div class="card card-container">
-        <form action="/action_page.php" class="signup">
+        <form @submit.prevent="Signup" class="signup">
           <img class="profile-img-card" src="@/assets/PIlogodark.png" />
           <br />
           <div>
@@ -11,16 +11,24 @@
               type="text"
               id="name"
               placeholder="Enter Your Name"
+              v-model="name"
               name="name"
               required
             />
             <br />
 
-            <input type="text" placeholder="Email" name="email" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              v-model="email"
+              required
+            />
 
             <input
               type="password"
-              placeholder=" Password"
+              placeholder="Password"
+              v-model="password"
               name="psw"
               required
             />
@@ -28,6 +36,7 @@
             <input
               type="password"
               placeholder="Repeat Password"
+              v-model="repeatpassword"
               name="psw-repeat"
               required
             /><button
@@ -44,13 +53,42 @@
 </template>
 
 <script>
+import "@/firebase/init";
+
 export default {
+  name: "signup",
   data() {
     return {
       name: "",
       email: "",
-      password: ""
+      password: "",
+      repeatpassword: ""
     };
+  },
+  methods: {
+    Signup() {
+      if (this.password != this.repeatpassword) {
+        alert("Passwords do not match");
+        return;
+      }
+      const firebase = require("firebase/app");
+      var errorCode, errorMessage;
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .catch(error => {
+          // Handle Errors here.
+          errorCode = error.code;
+          errorMessage = error.message;
+          if (errorCode == "auth/email-already-in-use") {
+            alert("Email already in use.");
+          } else if (errorCode == "auth/weak-password") {
+            alert("The password is too weak. Should be of length atleast 6");
+          }
+          console.log(errorCode + " => " + errorMessage);
+        })
+        .then(this.$router.push("/"));
+    }
   }
 };
 </script>
@@ -102,6 +140,7 @@ export default {
   border-radius: 50%;
 }
 input[type="text"],
+input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 12px 20px;
@@ -154,7 +193,7 @@ img.avatar {
 @media screen and (max-width: 450px) {
   .cancelbtn,
   .signupbtn {
-    width: 100%;
+    width: 50%;
   }
 }
 </style>

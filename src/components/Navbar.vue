@@ -3,7 +3,7 @@
     <b-navbar toggleable="lg" type="dark" variant="info">
       <b-navbar-brand href="#" to="/">
         <img class="icon" src="../../src/assets/PIlogo.png" width="39" />
-        {{ title }}
+        Post-IT
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -26,19 +26,20 @@
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
             <b-button
-              v-show="currentPage.includes('signup') ? false : true"
+              v-if="!user && !currentPage.includes('signup')"
               variant="outline-warning"
               class="mr-3"
               to="signup"
               >Sign Up</b-button
             >
             <b-button
-              v-show="currentPage.includes('login') ? false : true"
+              v-if="!user && !currentPage.includes('login')"
               variant="outline-warning"
               class="mr-2"
               to="login"
               >Log In</b-button
             >
+            <b-button v-if="user" @click.prevent="signout"> Sign Out</b-button>
             <!-- <b-nav-item-dropdown right>
                             <template v-slot:button-content>
                                 <display4>User</display4>
@@ -74,19 +75,35 @@
 </template>
 
 <script>
+import firebase from "firebase";
+
 export default {
   name: "navbar",
-  props: { title: String },
+  data() {
+    return {
+      user: null,
+      activeClass: "active"
+    };
+  },
+  created() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) this.user = user;
+      else this.user = null;
+    });
+  },
 
   computed: {
     currentPage() {
       return this.$route.path;
     }
   },
-  data() {
-    return {
-      activeClass: "active"
-    };
+  methods: {
+    signout() {
+      var user = firebase.auth().currentUser;
+      if (user) console.log("Before " + firebase.auth().currentUser.email);
+      firebase.auth().signOut();
+      console.log("After log out " + firebase.auth().currentUser);
+    }
   }
 };
 </script>

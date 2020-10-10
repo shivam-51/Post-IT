@@ -8,18 +8,23 @@
           src="@/assets/PIlogodark.png"
         />
         <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin">
+        <form class="form-signin" @submit.prevent="addmessage">
           <span id="reauth-email" class="reauth-email"></span>
           <input
             type="email"
+            name="email"
+            v-model="email"
             id="inputEmail"
             class="form-control"
             placeholder="Email address"
             required
             autofocus
           />
+          <p v-if="feedback">{{ feedback }}</p>
           <input
             type="password"
+            name="password"
+            v-model="password"
             id="inputPassword"
             class="form-control"
             placeholder="Password"
@@ -48,6 +53,43 @@
     </div>
   </div>
 </template>
+
+<script>
+// import db from "@/firebase/init";
+import firebase from "firebase";
+// import "@/firebase/init";
+
+export default {
+  name: "login",
+  data() {
+    return { email: null, password: null, feedback: "" };
+  },
+  methods: {
+    addmessage() {
+      if (this.email) {
+        // const firebase = require("firebase/app");
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(this.email, this.password)
+          .then(user => {
+            console.log(user.name);
+            this.$router.push("/");
+          })
+          .catch(error => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode + " => " + errorMessage);
+            if (errorCode == "auth/user-not-found")
+              alert("Please signup first or check your email");
+            else if (errorCode == "auth/wrong-password")
+              alert("Wrong Password!");
+          });
+      }
+    }
+  }
+};
+</script>
 
 <style scoped>
 .body-of-login {
