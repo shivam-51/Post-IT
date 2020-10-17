@@ -65,26 +65,23 @@ export default {
     return { email: null, password: null, feedback: "" };
   },
   methods: {
-    addmessage() {
+    async addmessage() {
       if (this.email) {
-        // const firebase = require("firebase/app");
-        firebase
-          .auth()
-          .signInWithEmailAndPassword(this.email, this.password)
-          .then(user => {
-            console.log(user.name);
-            this.$router.push("/");
-          })
-          .catch(error => {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log(errorCode + " => " + errorMessage);
-            if (errorCode == "auth/user-not-found")
-              alert("Please signup first or check your email");
-            else if (errorCode == "auth/wrong-password")
-              alert("Wrong Password!");
-          });
+        try {
+          const user = await firebase
+            .auth()
+            .signInWithEmailAndPassword(this.email, this.password);
+          console.log(user);
+          this.$router.push("/");
+        } catch (error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log(errorCode + " => " + errorMessage);
+          if (errorCode == "auth/user-not-found")
+            alert("Please signup first or check your email");
+          else if (errorCode == "auth/wrong-password") alert("Wrong Password!");
+        }
       }
     }
   }

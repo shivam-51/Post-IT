@@ -87,8 +87,8 @@ export default {
   },
   created() {
     firebase.auth().onAuthStateChanged(user => {
-      if (user) this.user = user;
-      else this.user = null;
+      this.user = !!user;
+      //   console.log("takes time huh");
     });
   },
 
@@ -99,10 +99,11 @@ export default {
   },
   methods: {
     signout() {
-      var user = firebase.auth().currentUser;
-      if (user) console.log("Before " + firebase.auth().currentUser.email);
+      //   var user = firebase.auth().currentUser;
+      //   if (user) console.log("Before " + firebase.auth().currentUser.email);
       firebase.auth().signOut();
-      console.log("After log out " + firebase.auth().currentUser);
+      this.user = null;
+      //   console.log("After log out " + firebase.auth().currentUser);
     }
   }
 };
