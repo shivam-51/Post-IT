@@ -72,22 +72,24 @@ export default {
         return;
       }
       const firebase = require("firebase/app");
-      var errorCode, errorMessage;
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
-        .catch(error => {
-          // Handle Errors here.
-          errorCode = error.code;
-          errorMessage = error.message;
-          if (errorCode == "auth/email-already-in-use") {
-            alert("Email already in use.");
-          } else if (errorCode == "auth/weak-password") {
-            alert("The password is too weak. Should be of length atleast 6");
-          }
-          console.log(errorCode + " => " + errorMessage);
-        })
-        .then(this.$router.push("/"));
+      try {
+        const user = firebase
+          .auth()
+          .createUserWithEmailAndPassword(this.email, this.password);
+        console.log(user);
+        this.$router.push("/");
+      } catch (error) {
+        // Handle Errors here.
+        var errorCode, errorMessage;
+        errorCode = error.code;
+        errorMessage = error.message;
+        if (errorCode == "auth/email-already-in-use") {
+          alert("Email already in use.");
+        } else if (errorCode == "auth/weak-password") {
+          alert("The password is too weak. Should be of length atleast 6");
+        }
+        console.log(errorCode + " => " + errorMessage);
+      }
     }
   }
 };

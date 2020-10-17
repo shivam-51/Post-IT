@@ -9,7 +9,7 @@
 <script>
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import "@/firebase/init";
+// import "@/firebase/init";
 
 export default {
   name: "app",
