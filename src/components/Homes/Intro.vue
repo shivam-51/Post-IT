@@ -4,14 +4,14 @@
     <div class="container">
       <div class="row card mt-5 p-5" style="background-color: paleturquoise">
         <div class="row">
-          <div class="col-md-6 order-1">
+          <div class="col-lg-6 order-1 text-center">
             <div class="floating component">
               <img class="image" src="@/assets/oldIIEST.png" />
             </div>
           </div>
           <div
-            class="col-md-6 mt-3 order-2 text-center mt-5"
-            style="font-size: 50px"
+            class="col-md-6 mt-3 order-2 text-center mt-5 col-xs-4"
+            
           >
             <h1 class="display-3 heading1">IIEST | IT</h1>
             <p class="lead mt-3">
@@ -36,6 +36,7 @@
           </div>
           <div
             class="col-md-6 mt-3 order-1 text-center mt-5 primary-overlay text-white"
+            
           >
             <h1 class="display-3 heading1">Post-IT</h1>
             <p class="lead">
