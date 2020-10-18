@@ -21,7 +21,6 @@
               required
             />
             <br />
-            <br />
             <button
               class="btn btn-lg btn-primary btn-block btn-postit"
               type="submit"
@@ -43,7 +42,8 @@ export default {
   data() {
     return {
       title: null,
-      description: null
+      description: null,
+      timestamp: null
     };
   },
   methods: {
@@ -51,10 +51,11 @@ export default {
       // Add a new document in collection "blogs"
       var db = firebase.firestore();
       db.collection("blogs")
-        .doc("October")
+        .doc()
         .set({
           title: this.title,
-          description: this.description
+          description: this.description,
+          timestamp: Date.now()
         })
         .then(function() {
           console.log("Document successfully written!");
@@ -62,6 +63,7 @@ export default {
         .catch(function(error) {
           console.error("Error writing document: ", error);
         });
+      this.$router.push("/allblog");
       this.title = null;
       this.description = null;
     }
@@ -86,9 +88,9 @@ export default {
   justify-content: center;
 }
 .card-container.card {
-  max-width: 550px;
-  max-height: 550px;
-  height: 520px;
+  max-width: 750px;
+  max-height: 650px;
+  height: 620px;
   padding: 40px 40px;
 }
 /*
@@ -127,7 +129,7 @@ export default {
 }
 
 #description {
-  height: 150px;
+  height: 320px;
 }
 
 .btn.btn-addblog {
