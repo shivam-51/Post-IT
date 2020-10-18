@@ -55,9 +55,7 @@
 </template>
 
 <script>
-// import db from "@/firebase/init";
 import firebase from "firebase";
-// import "@/firebase/init";
 
 export default {
   name: "login",

@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import "@/firebase/init";
+// import firebase from "firebase";
 
 export default {
   name: "signup",
@@ -66,14 +66,14 @@ export default {
     };
   },
   methods: {
-    Signup() {
+    async Signup() {
       if (this.password != this.repeatpassword) {
         alert("Passwords do not match");
         return;
       }
       const firebase = require("firebase/app");
       try {
-        const user = firebase
+        const user = await firebase
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password);
         console.log(user);
