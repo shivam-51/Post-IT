@@ -99,8 +99,9 @@ export default {
   },
   methods: {
     signout() {
-      //   var user = firebase.auth().currentUser;
-      //   if (user) console.log("Before " + firebase.auth().currentUser.email);
+      var user = firebase.auth().currentUser;
+      if (user)
+        console.log("Before " + firebase.auth().currentUser.displayName);
       firebase.auth().signOut();
       this.user = null;
       //   console.log("After log out " + firebase.auth().currentUser);

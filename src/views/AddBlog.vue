@@ -11,6 +11,7 @@
               id="title"
               v-model="title"
               required
+              autofocus
               placeholder="Title"
             />
             <textarea
@@ -50,12 +51,24 @@ export default {
     AddBlog() {
       // Add a new document in collection "blogs"
       var db = firebase.firestore();
-      db.collection("blogs")
+      //   var curuser = firebase.auth().currentUser;
+      //   console.log(curuser);
+      var curusername = firebase.auth().currentUser.displayName;
+
+      //   if (curuser) {
+      //     console.log("User" + "=>" + firebase.auth().currentUser.email);
+      //     // User is signed in.
+      //   } else {
+      //     console.log("No User");
+      //     // No user is signed in.
+      //   }
+      db.collection("blogs_third")
         .doc()
         .set({
           title: this.title,
           description: this.description,
-          timestamp: Date.now()
+          timestamp: Date.now(),
+          user: curusername
         })
         .then(function() {
           console.log("Document successfully written!");
