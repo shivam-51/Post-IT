@@ -142,7 +142,8 @@ export default {
 }
 
 #description {
-  height: 320px;
+  min-height: 320px;
+  max-height: 320px;
 }
 
 .btn.btn-addblog {
