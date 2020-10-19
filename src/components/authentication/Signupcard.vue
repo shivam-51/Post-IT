@@ -11,8 +11,9 @@
               type="text"
               id="name"
               placeholder="Enter Your Name"
-              v-model="name"
+              v-model="username"
               name="name"
+              autofocus
               required
             />
             <br />
@@ -76,6 +77,12 @@ export default {
         const user = await firebase
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password);
+        var curuser = firebase.auth().currentUser;
+
+        curuser.updateProfile({
+          displayName: this.username
+        });
+        console.log(this.username);
         console.log(user);
         this.$router.push("/");
       } catch (error) {

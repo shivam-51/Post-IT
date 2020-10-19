@@ -3,15 +3,24 @@
     <div class="card-container">
       <div class="allblogs" v-for="blog in blogs" :key="blog.id">
         <div
-          class="card bg-light mb-5  card-container"
+          class="card bg-light mb-5"
           style="max-width: 60rem; font-size:30px"
         >
-          <div class="card-header">{{ blog.title }}</div>
+          <div class="container ">
+            <span
+              ><b> {{ blog.title }}</b></span
+            >
+          </div>
+          <!-- <div class="card-header">{{ blog.title }}</div> -->
           <div class="card-body">
             <p class="card-text" id="card-text">
               {{ blog.description }}
             </p>
           </div>
+          <footer style="font-size:15px;" class="ml-auto">
+            <span>posted by </span
+            ><span style="color:blue;">{{ blog.user }}</span>
+          </footer>
         </div>
       </div>
     </div>
@@ -33,21 +42,25 @@ export default {
       blogs: []
     };
   },
-  created() {
+  async created() {
     var db = firebase.firestore();
-    db.collection("blogs")
-      .orderBy("timestamp", "desc")
-      .get()
-      .then(querySnapshot => {
+    try {
+      const database = await db
+        .collection("blogs_third")
+        .orderBy("timestamp", "desc");
+      database.get().then(querySnapshot => {
         querySnapshot.forEach(doc => {
           // doc.data() is never undefined for query doc snapshots
           // console.log(doc.id, " => ", doc.data());
           let blog = doc.data();
           blog.id = doc.id;
           this.blogs.push(blog);
-          console.log(blog.title + "=>" + blog.description);
+          //   console.log(blog.title + "=>" + blog.description);
         });
       });
+    } catch (error) {
+      console.log(error);
+    }
   }
 };
 </script>
@@ -62,7 +75,7 @@ export default {
   margin-bottom: 90px;
 }
 #card-text {
-  font-size: 20px;
+  font-size: 17px;
 }
 .fixed-btn {
   position: fixed;
@@ -87,7 +100,9 @@ export default {
   opacity: 0.8;
   transition: background 0.5s, color 1s, opacity 0.5s, border 0.5s;
 }
-
+.heading_blog {
+  background-color: aqua;
+}
 .fixed-btn:hover {
   opacity: 1;
   color: deepskyblue;
