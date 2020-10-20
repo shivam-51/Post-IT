@@ -47,7 +47,7 @@
         <p>
           No account? sign up
           <!-- <a to="signup" class="forgot-password"> here </a> -->
-          <a href="#/signup">here</a>
+          <a href="/signup">here</a>
         </p>
       </div>
     </div>
@@ -55,7 +55,8 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 export default {
   name: "login",
