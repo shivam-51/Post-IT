@@ -7,8 +7,8 @@ import router from "./router";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 /* eslint-disable no-unused-vars */
-import firebase, { app } from "firebase";
-// import firestore from "firebase/firestore";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
