@@ -1,172 +1,165 @@
 <template>
-    <div class="blogs">
-       
-            <div class="card">
-            <h1
-                style="
-                    margin-left: 20px;
-                    padding:10px;
-                    font-family: san-serif;
-                    color: black;
-                "
+  <div class="addblog">
+    <div class="container">
+      <div class="card card-container">
+        <h1>Enter a new Entry</h1>
+        <br />
+        <form action="" class="signup" @submit.prevent="AddBlog">
+          <div>
+            <input
+              type="text"
+              id="title"
+              v-model="title"
+              required
+              autofocus
+              placeholder="Title"
+            />
+            <textarea
+              type="text"
+              id="description"
+              v-model="description"
+              placeholder="Description"
+              required
+            />
+            <br />
+            <button
+              class="btn btn-lg btn-primary btn-block btn-postit"
+              type="submit"
             >
-                ADD A BLOG
-            </h1>
-            
-            <form method="POST">
-                <input
-                    id="div"
-                    type="text"
-                    placeholder="ENTER THE TITLE OF BLOG"
-                    required
-                />
-                <br /><br />
-
-                <input
-                    id="div"
-                    type="text"
-                    placeholder="ADD HASHTAGS IF NECESSARY"
-                />
-                <br /><br />
-
-                <form>
-                    <p style="font: medium; margin-left: -355px;color:black;">
-                        Choose an image
-                    </p>
-                    <input id="div" type="file" />
-                </form>
-                <br />
-                <textarea
-                    id="div1"
-                    placeholder="ADD A DESCRIPTION OF THE BLOG"
-                    required
-                ></textarea>
-                <br /><br />
-
-                <input
-                    id="sub"
-                    type="submit"
-                    value="POST!"
-                    style="
-                        width: 150px;
-                        border-radius: 5px;
-                        align-content: center;
-                        margin-left:375px;
-                    "
-                />
-            </form>
-            </div>
-        
+              Post IT
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </template>
+
 <script>
+import firebase from "firebase";
+
 export default {
-    name: "blog",
+  name: "login",
+  data() {
+    return {
+      title: null,
+      description: null,
+      timestamp: null
+    };
+  },
+  methods: {
+    AddBlog() {
+      // Add a new document in collection "blogs"
+      var db = firebase.firestore();
+      //   var curuser = firebase.auth().currentUser;
+      //   console.log(curuser);
+      var curusername = firebase.auth().currentUser.displayName;
+
+      //   if (curuser) {
+      //     console.log("User" + "=>" + firebase.auth().currentUser.email);
+      //     // User is signed in.
+      //   } else {
+      //     console.log("No User");
+      //     // No user is signed in.
+      //   }
+      db.collection("blogs_third")
+        .doc()
+        .set({
+          title: this.title,
+          description: this.description,
+          timestamp: Date.now(),
+          user: curusername
+        })
+        .then(function() {
+          console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+          console.error("Error writing document: ", error);
+        });
+      this.$router.push("/allblog");
+      this.title = null;
+      this.description = null;
+    }
+  }
 };
 </script>
 
 <style scoped>
-.blogs{
-    background:linear-gradient(to bottom right,white,#bcbdc4);
-        height:630px;
-        padding:0px;
-        margin:0px;
-        margin-top:0;
-        /* float: left;; */
+.addblog {
+  min-height: 100vh;
+  padding: 0;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 51%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  background-size: cover;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.card{
-    width:600px;
-    margin:auto;
-    /* padding:15px; */
-    background-color:white;
-    border-radius: 5px;
-    -webkit-box-shadow: 10px 16px 16px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 10px 16px 16px rgba(0, 0, 0, 0.3);
-    box-shadow: 10px 16px 16px rgba(0, 0, 0, 0.3);
-    margin-top:10px;
-    margin-bottom: 20px;
+.card-container.card {
+  max-width: 750px;
+  max-height: 650px;
+  height: 620px;
+  padding: 40px 40px;
 }
-#div {
-    width: 500px;
-    height: 70px;
-    padding: 15px;
-    color: black;
-    background-color: white;
-    border-radius: 9px;
-    font-size: medium;
-    /* box-sizing: border-box; */
-    float: none;
-    align-content:flex-start;
-    margin-left: 20px;
-    border: 3px solid black;
+/*
+ * Card component
+ */
+.card {
+  background-color: #f7f7f7;
+  /* just in case there no content*/
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  /* shadows and rounded borders */
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
-#div:hover {
-    background-color:black;
-    color: white;
+/*
+ * Form styles
+ */
+#title,
+#description {
+  padding: 10px;
+  width: 100%;
+  /* display: block; */
+  margin-bottom: 20px;
+  font-size: 20px;
+  /* height: 50px;
+  max-height: 50px; */
+  z-index: 1;
+  /* position: relative; */
+  /* -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; */
 }
-#div1 {
-    width: 500px;
-    height: 117px;
-    max-height: 117px;
-    min-height: 117px;
-    padding: 15px;
-    color: black;
-    background-color: white;
-    border-radius: 9px;
-    font-size: medium;
-    /* box-sizing: border-box; */
-    float: none;
-    align-content: center;
-    margin-left: 20px;
-    border: 3px solid black;
+
+#description {
+  height: 320px;
 }
-#div1:hover {
-    background-color:black;
-    color: white;
-}
-#sub {
-    margin-left: 45px;
-    /* background-color: plum; */
-    margin-bottom:10px;
-    font-weight: bold;
-    border: 3px solid black;
-    background-color:white;
-    color: black;
-}
-#sub:hover {
-    background-color: black;
-    color:white;
-}
-.main_nav {
-    background-color: #563d7c;
-    margin-left: 0px;
-    margin-top: 0px;
-    box-shadow: 5px 5px 5px black;
-}
-.main_nav > ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-.main_nav > ul > li {
-    display: inline-block;
-}
-.main_nav > ul > li > a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    font-family: san-serif;
-    font-size: 18px;
-}
-.main_nav > ul > li > a:hover {
-    color: tomato;
-}
-.icon {
-    display: inline-block;
-    margin-right: 3px;
-    margin-top: 7px;
+
+.btn.btn-addblog {
+  width: 50vh;
+  margin-top: 30px;
+  background-color: rgb(104, 145, 162);
+  padding: 0px;
+  font-weight: 700;
+  font-size: 14px;
+  height: 36px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  -o-transition: all 0.218s;
+  -moz-transition: all 0.218s;
+  -webkit-transition: all 0.218s;
+  transition: all 0.218s;
 }
 </style>
-
