@@ -44,6 +44,7 @@
 #carousel {
   padding-top: 75px;
   margin-top: 40px;
+  text-align: center;
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {

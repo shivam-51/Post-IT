@@ -36,7 +36,9 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import app from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 
 export default {
   name: "login",
@@ -50,10 +52,10 @@ export default {
   methods: {
     AddBlog() {
       // Add a new document in collection "blogs"
-      var db = firebase.firestore();
+      const db = app.firestore();
       //   var curuser = firebase.auth().currentUser;
       //   console.log(curuser);
-      var curusername = firebase.auth().currentUser.displayName;
+      var curusername = app.auth().currentUser.displayName;
 
       //   if (curuser) {
       //     console.log("User" + "=>" + firebase.auth().currentUser.email);
@@ -142,7 +144,8 @@ export default {
 }
 
 #description {
-  height: 320px;
+  max-height:320px;
+  min-height:320px;
 }
 
 .btn.btn-addblog {
