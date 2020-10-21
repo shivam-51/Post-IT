@@ -19,7 +19,7 @@
           <template v-slot:img>
             <img
               class="image img-fluid"
-              src="@/assets/ITlogo.png"
+              src="@/assets/SOCIT.png"
               alt="image slot"
             />
           </template>

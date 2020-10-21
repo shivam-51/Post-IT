@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-md-6 order-1">
             <div class="floating component">
-              <img class="image" src="@/assets/oldIIEST.png" />
+              <img class="image" src="@/assets/oldcollege.png" />
             </div>
           </div>
           <div
