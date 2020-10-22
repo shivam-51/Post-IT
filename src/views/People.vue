@@ -1,62 +1,142 @@
 <template>
-  <div class="component row" style="overflow: hidden">
-    <div class="sidebar-container">
-      <ul class="sidebar-navigation">
-        <li>
-          <a href="#">
-            <i class="fa fa-home" aria-hidden="true"></i> Homepage
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-home" aria-hidden="true"></i> Homepage
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-home" aria-hidden="true"></i> Homepage
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-home" aria-hidden="true"></i> Homepage
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-home" aria-hidden="true"></i> Homepage
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
-          </a>
-        </li>
-      </ul>
+  <div style="overflow: hidden">
+    <div class="center mt-4 mb-4">
+      <h1 v-if="kind != 'alumni' && kind != 'faculty'">
+        Meet the {{ kind }} year students of IT departments
+      </h1>
+      <h1 v-else>Meet the {{ kind }} of IT department</h1>
+    </div>
+    <div class="twitter-wrap">
+      <div class="side-left  sidebar-container">
+        <ul class="sidebar-navigation">
+          <li>
+            <b-button @click.prevent="first">First Year</b-button>
+          </li>
+          <li>
+            <b-button @click.prevent="second">Second Year</b-button>
+          </li>
+          <li>
+            <b-button @click.prevent="third">Third Year</b-button>
+          </li>
+          <li>
+            <b-button @click.prevent="fourth">Fourth Year</b-button>
+          </li>
+          <li>
+            <b-button @click.prevent="alumni">Alumni</b-button>
+          </li>
+          <li>
+            <b-button @click.prevent="faculty">Faculty</b-button>
+          </li>
+        </ul>
+      </div>
+      <div class="side-main">
+        <span v-show="kind == 'first'"> <First /> </span>
+        <span v-show="kind == 'second'"> <Second /> </span>
+        <span v-show="kind == 'third'"> <Third /> </span>
+        <span v-show="kind == 'fourth'"> <Fourth /> </span>
+        <span v-show="kind == 'alumni'"> <Alumni /> </span>
+        <span v-show="kind == 'faculty'"> <Faculty /> </span>
+      </div>
+      <div class="side-main center">
+        <div class="fixed-btn ml-auto">
+          <router-link to="./addpeople"
+            ><i class="fas fa-plus fa-sm"></i
+          ></router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
+<script>
+import First from "../components/Family/First";
+import Second from "../components/Family/Second";
+import Third from "../components/Family/Third";
+import Fourth from "../components/Family/Fourth";
+import Alumni from "../components/Family/Alumni";
+import Faculty from "../components/Family/Faculty";
+
+export default {
+  name: "People",
+  data() {
+    return {
+      kind: "first"
+    };
+  },
+  components: {
+    First,
+    Second,
+    Third,
+    Fourth,
+    Alumni,
+    Faculty
+  },
+  methods: {
+    first() {
+      this.kind = "first";
+    },
+    second() {
+      this.kind = "second";
+    },
+    third() {
+      this.kind = "third";
+    },
+    fourth() {
+      this.kind = "fourth";
+    },
+    alumni() {
+      this.kind = "alumni";
+    },
+    faculty() {
+      this.kind = "faculty";
+    }
+  }
+};
+</script>
+>
+
 <style scoped>
-.row {
-  display: flex;
-  height: 700px;
+.twitter-wrap {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  /* position: relative; */
 }
-.col-1-3 {
+.center {
+  /* height: 500px; */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* align-items: center; */
-  /* padding: 20px; */
-  float: left;
-  width: 33%;
 }
-.col-2-3 {
-  float: right;
-  width: 66%;
+.btn-secondary {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.fixed-btn {
+  position: fixed;
+  height: 80px;
+  text-shadow: 1px 1px 1px #ccc;
+  text-shadow: 0 0 9px #000;
+  right: 3%;
+  top: 12%;
+  cursor: pointer;
+  display: flex;
+  width: 5vw;
+  height: 5vw;
+  font-size: 4rem;
+  border-radius: 25vw;
+  overflow: hidden;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid #ffe14d;
+  /* box-shadow: 0 1px 10px rgba(0, 0, 0, 0.46); */
+  opacity: 0.8;
+  transition: background 0.5s, color 1s, opacity 0.5s, border 0.5s;
 }
 .sidebar-container {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   /* position: fixed; */
@@ -65,7 +145,7 @@
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  background: #1a1a1a;
+  background: #fff;
   color: #fff;
 }
 

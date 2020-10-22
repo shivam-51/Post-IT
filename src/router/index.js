@@ -44,7 +44,22 @@ const routes = [
     path: "/people",
     name: "People",
     component: () => import("../views/People.vue")
+  },
+  {
+    path: "/addpeople",
+    name: "AddPeople",
+    component: () => import("../views/AddPeople.vue")
   }
+  //   {
+  //     path: "/people/first",
+  //     name: "First",
+  //     component: () => import("../components/Family/First.vue")
+  //   },
+  //   {
+  //     path: "/people/second",
+  //     name: "Second",
+  //     component: () => import("../components/Family/Second.vue")
+  //   }
 ];
 
 const router = new VueRouter({
