@@ -1,13 +1,14 @@
 <template>
   <div class="body">
-    <h1 class="display-4 mt-3">
+    <h1 class="display-5 mt-3 text-center font-weight-bold">
       Meet the Builders of Post-IT!
     </h1>
+    <hr />
     <br />
     <div class="container">
-      <div class="our_team" style="width:370px; height:320px;">
+      <div class="our_team card">
         <div class="pic">
-          <img src="../assets/team/SRsir.jpg" />
+          <img src="../assets/team/SRsir.jpg" class="img-fluid" />
         </div>
         <div class="team-content">
           <h4 class="title">Surajit Kumar Roy</h4>
@@ -20,7 +21,10 @@
     <div class="container">
       <div class="our_team" v-for="member in members" :key="member.id">
         <div class="pic">
-          <img :src="require(`@/assets/team/${member.pic_name}`)" />
+          <img
+            :src="require(`@/assets/team/${member.pic_name}`)"
+            class="img-fluid"
+          />
         </div>
         <div class="team-content">
           <h4 class="title">{{ member.name }}</h4>
@@ -67,7 +71,7 @@ export default {
           github_link: "https://github.com/BAAHUBALI7781/",
           mail_id: "mailto:divyanshm1609@gmail.co",
           linkedin_link:
-            "https://www.linkedin.com/in/divyansh-masiwal-3ba250188/"
+            "https://www.linkedin.com/in/divyansh-masiwal-3ba250188/",
         },
         {
           id: "2",
@@ -77,7 +81,7 @@ export default {
           facebook_link: "https://www.facebook.com/heyshivam51",
           github_link: "https://github.com/shivam-51/",
           mail_id: "mailto:shivamhere247@gmail.com",
-          linkedin_link: "https://www.linkedin.com/in/shivamhere"
+          linkedin_link: "https://www.linkedin.com/in/shivamhere",
         },
         {
           id: "3",
@@ -88,7 +92,7 @@ export default {
           github_link: "https://github.com/praneetha3108/",
           mail_id: "mailto:praneethanarayanasetti@gmail.com",
           linkedin_link:
-            "https://www.linkedin.com/in/praneetha-narayanasetti-9270b6190"
+            "https://www.linkedin.com/in/praneetha-narayanasetti-9270b6190",
         },
         {
           id: "4",
@@ -99,11 +103,12 @@ export default {
             "https://www.facebook.com/profile.php?id=100008020094550",
           github_link: "https://github.com/aditya2610/",
           mail_id: "mailto:adityaagarwal109@gmail.com",
-          linkedin_link: "https://www.linkedin.com/in/aditya-agarwal-b6242b192/"
-        }
-      ]
+          linkedin_link:
+            "https://www.linkedin.com/in/aditya-agarwal-b6242b192/",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 <style scoped>
@@ -133,7 +138,8 @@ export default {
   position: relative;
   margin: 0px 20px;
   padding: 20px 0 50px;
-
+  width: 40%;
+  height: 20%;
   -moz-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.3);
@@ -222,6 +228,8 @@ export default {
   .our_team {
     width: 18%;
     margin-top: 30px;
+    width: 60%;
+    height: 20%;
   }
 }
 
@@ -232,6 +240,8 @@ export default {
   .our_team {
     width: 80%;
     margin-top: 30px;
+    width: 80%;
+    height: 20%;
   }
 }
 </style>
