@@ -46,6 +46,15 @@
             />
             <br />
             <br />
+            <span style="color:blue">Choose your profile picture</span>
+            <input
+              type="file"
+              required
+              @change="previewImage"
+              accept="image/*"
+            />
+            <br />
+            <br />
             <button
               class="btn btn-lg btn-primary btn-block btn-postit"
               type="submit"
@@ -63,6 +72,7 @@
 import app from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import "firebase/storage";
 
 export default {
   name: "login",
@@ -72,30 +82,73 @@ export default {
       phone: null,
       email: null,
       description: null,
-      timestamp: null
+      timestamp: null,
+      imageData: null,
+      picture: null,
+      uploadValue: null
     };
   },
   methods: {
-    AddBlog() {
-      // Add a new document in collection "blogs"
-      const db = app.firestore();
-      //   var curuser = firebase.auth().currentUser;
-      //   console.log(curuser);
-      var curusername = app.auth().currentUser.displayName;
+    previewImage(event) {
+      this.picture = null;
+      this.imageData = event.target.files[0];
+      this.picture = null;
+      const storageRef = app
+        .storage()
+        .ref("peoples/" + Date.now())
+        .put(this.imageData);
+      storageRef.on(
+        `state_changed`,
+        snapshot => {
+          this.uploadValue =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        },
+        error => {
+          console.log(error.message);
+        },
+        () => {
+          this.uploadValue = 100;
+          storageRef.snapshot.ref.getDownloadURL().then(url => {
+            this.picture = url;
+          });
+        }
+      );
+    },
+    onUpload() {
+      this.picture = null;
+      //   this.imageData.name = this.imageData.name + Date.now();
+      const storageRef = app
+        .storage()
+        .ref("peoples/" + Date.now())
+        .put(this.imageData);
+      storageRef.on(
+        `state_changed`,
+        snapshot => {
+          this.uploadValue =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        },
+        error => {
+          console.log(error.message);
+        },
+        () => {
+          this.uploadValue = 100;
+          storageRef.snapshot.ref.getDownloadURL().then(url => {
+            this.picture = url;
+          });
+        }
+      );
+    },
 
-      //   if (curuser) {
-      //     console.log("User" + "=>" + firebase.auth().currentUser.email);
-      //     // User is signed in.
-      //   } else {
-      //     console.log("No User");
-      //     // No user is signed in.
-      //   }
-      db.collection("users_firstf")
+    async AddBlog() {
+      const db = app.firestore();
+      var curusername = app.auth().currentUser.displayName;
+      db.collection("users_firstf_last")
         .doc()
         .set({
           name: this.name,
           phone: this.phone,
           email: this.email,
+          image: this.picture,
           description: this.description,
           timestamp: Date.now(),
           user: curusername
@@ -106,7 +159,7 @@ export default {
         .catch(function(error) {
           console.error("Error writing document: ", error);
         });
-      this.$router.push("/people");
+      //   this.$router.push("/people");
       this.title = null;
       this.description = null;
     }
@@ -131,10 +184,10 @@ export default {
   justify-content: center;
 }
 .card-container.card {
-  max-width: 500px;
+  max-width: 600px;
   width: 400px;
   max-height: 650px;
-  height: 420px;
+  height: 470px;
   padding: 40px 40px;
 }
 /*
