@@ -12,17 +12,39 @@
               v-model="name"
               required
               autofocus
-              placeholder="Title"
+              placeholder="name"
             />
+            <br />
             <br />
             <input
               type="text"
               id="name"
-              v-model="year"
+              v-model="phone"
               required
               autofocus
-              placeholder="Title"
+              placeholder="Number"
             />
+            <br />
+            <br />
+            <input
+              type="text"
+              id="name"
+              v-model="email"
+              required
+              autofocus
+              placeholder="Email"
+            />
+            <br />
+            <br />
+            <input
+              type="text"
+              id="name"
+              v-model="description"
+              required
+              autofocus
+              placeholder="Description about you"
+            />
+            <br />
             <br />
             <button
               class="btn btn-lg btn-primary btn-block btn-postit"
@@ -47,7 +69,9 @@ export default {
   data() {
     return {
       name: null,
-      year: null,
+      phone: null,
+      email: null,
+      description: null,
       timestamp: null
     };
   },
@@ -66,11 +90,13 @@ export default {
       //     console.log("No User");
       //     // No user is signed in.
       //   }
-      db.collection("users_first")
+      db.collection("users_firstf")
         .doc()
         .set({
           name: this.name,
-          year: this.year,
+          phone: this.phone,
+          email: this.email,
+          description: this.description,
           timestamp: Date.now(),
           user: curusername
         })
@@ -105,9 +131,10 @@ export default {
   justify-content: center;
 }
 .card-container.card {
-  max-width: 750px;
+  max-width: 500px;
+  width: 400px;
   max-height: 650px;
-  height: 620px;
+  height: 420px;
   padding: 40px 40px;
 }
 /*
@@ -129,42 +156,4 @@ export default {
 /*
  * Form styles
  */
-#title,
-#description {
-  padding: 10px;
-  width: 100%;
-  /* display: block; */
-  margin-bottom: 20px;
-  font-size: 20px;
-  /* height: 50px;
-  max-height: 50px; */
-  z-index: 1;
-  /* position: relative; */
-  /* -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; */
-}
-
-#description {
-  max-height: 320px;
-  min-height: 320px;
-}
-
-.btn.btn-addblog {
-  width: 50vh;
-  margin-top: 30px;
-  background-color: rgb(104, 145, 162);
-  padding: 0px;
-  font-weight: 700;
-  font-size: 14px;
-  height: 36px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: none;
-  -o-transition: all 0.218s;
-  -moz-transition: all 0.218s;
-  -webkit-transition: all 0.218s;
-  transition: all 0.218s;
-}
 </style>

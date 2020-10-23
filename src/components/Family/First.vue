@@ -1,64 +1,31 @@
 <template>
   <div class="component">
     <div class="row">
-      <div class="card column" style="width: 18rem;">
+      <!-- <div > -->
+      <div
+        class="card column"
+        v-for="user in users"
+        :key="user.id"
+        style="width: 19rem;"
+      >
         <img
           class="card-img-top"
           src="https://source.unsplash.com/WLUHO9A_xik/1600x900"
           alt="Card image cap"
         />
         <div class="card-body">
-          <h5 class="card-title">asjk</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
+          <span class="name">{{ user.name }}</span>
+          <br />
+          <i class="fas fa-phone-square-alt"></i>
+          <span class="p-1">+{{ user.phone }}</span>
+          <br />
+          <i class="far fa-envelope"></i>
+          <span class="p-1">{{ user.email }}</span>
+          <br />
+          <br />
+
           <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card column" style="width: 18rem;">
-        <img
-          class="card-img-top"
-          src="https://source.unsplash.com/WLUHO9A_xik/1600x900"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card column" style="width: 18rem;">
-        <img
-          class="card-img-top"
-          src="https://source.unsplash.com/WLUHO9A_xik/1600x900"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card column" style="width: 18rem;">
-        <img
-          class="card-img-top"
-          src="https://source.unsplash.com/WLUHO9A_xik/1600x900"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -80,8 +47,8 @@ export default {
     const db = app.firestore();
     try {
       const database = await db
-        .collection("users_first")
-        .orderBy("timestamp", "desc");
+        .collection("users_firstf")
+        .orderBy("timestamp", "asc");
       database.get().then(querySnapshot => {
         querySnapshot.forEach(doc => {
           // doc.data() is never undefined for query doc snapshots
@@ -100,12 +67,19 @@ export default {
 </script>
 
 <style scoped>
+.name {
+  font-size: 18px;
+  margin-bottom: 2px;
+  font-weight: 600;
+  /* font-family: "Courier New", Courier, monospace; */
+}
 .column {
   flex: 25%;
   max-width: 25%;
   padding: 0 4px;
 }
 .card {
+  width: 50px;
   margin: 25px;
   padding: 5px;
 }

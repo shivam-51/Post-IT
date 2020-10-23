@@ -144,25 +144,7 @@ export default {
 }
 
 #description {
-  max-height:320px;
-  min-height:320px;
-}
-
-.btn.btn-addblog {
-  width: 50vh;
-  margin-top: 30px;
-  background-color: rgb(104, 145, 162);
-  padding: 0px;
-  font-weight: 700;
-  font-size: 14px;
-  height: 36px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: none;
-  -o-transition: all 0.218s;
-  -moz-transition: all 0.218s;
-  -webkit-transition: all 0.218s;
-  transition: all 0.218s;
+  max-height: 320px;
+  min-height: 320px;
 }
 </style>
