@@ -6,14 +6,15 @@
         class="card column"
         v-for="user in users"
         :key="user.id"
-        style="width: 19rem;"
+        style="width: 24rem;"
       >
         <img
           class="card-img-top"
-          src="https://source.unsplash.com/WLUHO9A_xik/1600x900"
+          v-bind:src="user.image"
           alt="Card image cap"
         />
         <div class="card-body">
+          <!-- <span >{{ user.image }}</span> -->
           <span class="name">{{ user.name }}</span>
           <br />
           <i class="fas fa-phone-square-alt"></i>
@@ -24,7 +25,7 @@
           <br />
           <br />
 
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
           <!-- </div> -->
         </div>
       </div>
@@ -47,7 +48,7 @@ export default {
     const db = app.firestore();
     try {
       const database = await db
-        .collection("users_firstf")
+        .collection("users_firstf_ff")
         .orderBy("timestamp", "asc");
       database.get().then(querySnapshot => {
         querySnapshot.forEach(doc => {
@@ -75,7 +76,7 @@ export default {
 }
 .column {
   flex: 25%;
-  max-width: 25%;
+  max-width: 30%;
   padding: 0 4px;
 }
 .card {

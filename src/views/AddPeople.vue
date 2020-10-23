@@ -4,7 +4,7 @@
       <div class="card card-container">
         <h1>Enter a new Entry</h1>
         <br />
-        <form action="" class="signup" @submit.prevent="AddBlog">
+        <form action="" class="signup " @submit.prevent="AddBlog">
           <div>
             <input
               type="text"
@@ -12,22 +12,22 @@
               v-model="name"
               required
               autofocus
-              placeholder="name"
+              placeholder="Your Name"
             />
             <br />
             <br />
             <input
-              type="text"
+              type="tel"
               id="name"
               v-model="phone"
               required
               autofocus
-              placeholder="Number"
+              placeholder="Number with Country Code"
             />
             <br />
             <br />
             <input
-              type="text"
+              type="email"
               id="name"
               v-model="email"
               required
@@ -142,7 +142,7 @@ export default {
     async AddBlog() {
       const db = app.firestore();
       var curusername = app.auth().currentUser.displayName;
-      db.collection("users_firstf_last")
+      db.collection("users_firstf_ff")
         .doc()
         .set({
           name: this.name,
@@ -159,7 +159,7 @@ export default {
         .catch(function(error) {
           console.error("Error writing document: ", error);
         });
-      //   this.$router.push("/people");
+      this.$router.push("/people");
       this.title = null;
       this.description = null;
     }
@@ -186,8 +186,8 @@ export default {
 .card-container.card {
   max-width: 600px;
   width: 400px;
-  max-height: 650px;
-  height: 470px;
+  max-height: 670px;
+  height: 500px;
   padding: 40px 40px;
 }
 /*
