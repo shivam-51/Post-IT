@@ -33,7 +33,8 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import app from "firebase/app";
+import "firebase/firestore";
 
 export default {
   name: "allblog",
@@ -43,7 +44,7 @@ export default {
     };
   },
   async created() {
-    var db = firebase.firestore();
+    const db = app.firestore();
     try {
       const database = await db
         .collection("blogs_third")

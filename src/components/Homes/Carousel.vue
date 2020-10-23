@@ -19,7 +19,7 @@
           <template v-slot:img>
             <img
               class="image img-fluid"
-              src="@/assets/ITlogo.png"
+              src="@/assets/SOCIT.png"
               alt="image slot"
             />
           </template>
@@ -35,6 +35,24 @@
             />
           </template>
         </b-carousel-slide>
+        <b-carousel-slide>
+          <template v-slot:img>
+            <img
+              class="image img-fluid"
+              id="HR"
+              src="@/assets/HR.jpeg"
+              alt="image slot"
+            />
+            <p style="margin-top: 3px">
+              <small
+                >Prof. Hafizur Rahaman,Former Head of Department<br />
+                with Prof. Mitsuo Ochi,President of Hiroshima University ,
+                Japan</small
+              >
+            </p>
+            <br />
+          </template>
+        </b-carousel-slide>
       </div>
     </b-carousel>
   </div>
@@ -44,6 +62,7 @@
 #carousel {
   padding-top: 75px;
   margin-top: 40px;
+  text-align: center;
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -68,5 +87,8 @@
   width: auto;
   height: 300px;
   max-height: 360px;
+}
+#HR {
+  height: 240px;
 }
 </style>

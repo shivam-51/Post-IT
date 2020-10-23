@@ -24,14 +24,32 @@
           </div>
         </div>
       </div>
-      <div
-        class="row card mt-5 p-5"
-        style="background-color: rgba(50, 146, 166, 0.8)"
-      >
-        <div class="row">
-          <div class="col-md-6 order-2 primary-overlay text-white">
-            <div class="floating component">
-              <img class="image" src="@/assets/PIlogodark.png" />
+      <div class="mt-5">
+        <div
+          class="card p-md-5 p-2 ml-md-n5 mr-md-n5"
+          style="background-color: rgba(50, 146, 166, 0.8)"
+        >
+          <div class="row">
+            <div
+              class="col-md-6 order-2 primary-overlay text-white text-center"
+            >
+              <div class="floating component">
+                <img class="image img-fluid" src="@/assets/PIlogodark.png" />
+              </div>
+            </div>
+            <div
+              class="col-md-6 mt-3 order-1 text-center primary-overlay text-white"
+            >
+              <h1 class="display-3 heading1">Post-IT</h1>
+              <p class="lead">
+                We present to you POST-IT: a social platform to connect people
+                and form a network. Users can share the articles to social media
+                feeds, have endless conversation and authentic human connection.
+                This platform is made exclusively by and for the Department of
+                Information Technology, IIEST Shibpur. Gone are the days when we
+                had to send email to every person, what's the contemporary
+                alternative? Just Post-IT.
+              </p>
             </div>
           </div>
           <div
@@ -57,11 +75,14 @@
 
 <script>
 export default {
-  name: "Intro"
+  name: "Intro",
 };
 </script>
 
 <style scoped>
+* {
+  box-sizing: border-box;
+}
 .heading1 {
   text-shadow: 2px 2px 8px;
 }
@@ -70,9 +91,6 @@ export default {
   padding-bottom: 2px;
 }
 .card {
-  margin-left: -15mm;
-  margin-bottom: 35px;
-  margin-right: -15mm;
   border-style: outset;
   border-radius: 50px;
   background-size: cover;
@@ -80,11 +98,9 @@ export default {
   transition: 0.3s;
   /* width: 40%; */
 }
-
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-
 .floating {
   animation-name: floating;
   animation-duration: 3s;
@@ -93,7 +109,6 @@ export default {
   margin-left: 30px;
   margin-top: 5px;
 }
-
 @keyframes floating {
   from {
     transform: translate(0, 0px);

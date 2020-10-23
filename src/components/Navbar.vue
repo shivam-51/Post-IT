@@ -75,7 +75,8 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 export default {
   name: "navbar",
