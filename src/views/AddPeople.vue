@@ -4,7 +4,7 @@
       <div class="card card-container">
         <h1>Enter a new Entry</h1>
         <br />
-        <form action="" class="signup " @submit.prevent="AddBlog">
+        <form action="" class="signup" @submit.prevent="AddBlog">
           <div>
             <input
               type="text"
@@ -12,26 +12,25 @@
               v-model="name"
               required
               autofocus
-              placeholder="Your Name"
+              placeholder="name"
             />
             <br />
             <br />
             <input
-              type="tel"
+              type="text"
               id="name"
               v-model="phone"
               required
               autofocus
-              placeholder="Number with Country Code"
+              placeholder="Number"
             />
             <br />
             <br />
             <input
-              type="email"
+              type="text"
               id="name"
               v-model="email"
               required
-              autofocus
               placeholder="Email"
             />
             <br />
@@ -49,8 +48,8 @@
             <span style="color:blue">Choose your profile picture</span>
             <input
               type="file"
-              required
               @change="previewImage"
+              required
               accept="image/*"
             />
             <br />
@@ -91,8 +90,10 @@ export default {
   methods: {
     previewImage(event) {
       this.picture = null;
+      this.imageData = null;
       this.imageData = event.target.files[0];
-      this.picture = null;
+      //   if (this.imageData == null)
+      //     this.imageData = "https://source.unsplash.com/user/erondu/1600x900";
       const storageRef = app
         .storage()
         .ref("peoples/" + Date.now())
@@ -114,31 +115,6 @@ export default {
         }
       );
     },
-    onUpload() {
-      this.picture = null;
-      //   this.imageData.name = this.imageData.name + Date.now();
-      const storageRef = app
-        .storage()
-        .ref("peoples/" + Date.now())
-        .put(this.imageData);
-      storageRef.on(
-        `state_changed`,
-        snapshot => {
-          this.uploadValue =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        },
-        error => {
-          console.log(error.message);
-        },
-        () => {
-          this.uploadValue = 100;
-          storageRef.snapshot.ref.getDownloadURL().then(url => {
-            this.picture = url;
-          });
-        }
-      );
-    },
-
     async AddBlog() {
       const db = app.firestore();
       var curusername = app.auth().currentUser.displayName;
@@ -159,9 +135,15 @@ export default {
         .catch(function(error) {
           console.error("Error writing document: ", error);
         });
+
+      //   await setTimeout(() => {
+      //     console.log("World!");
+      //   }, 7000);
+      const delay = ms => new Promise(res => setTimeout(res, ms));
+
+      await delay(1500);
+
       this.$router.push("/people");
-      this.title = null;
-      this.description = null;
     }
   }
 };
@@ -186,8 +168,8 @@ export default {
 .card-container.card {
   max-width: 600px;
   width: 400px;
-  max-height: 670px;
-  height: 500px;
+  max-height: 650px;
+  height: 470px;
   padding: 40px 40px;
 }
 /*
