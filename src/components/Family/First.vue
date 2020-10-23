@@ -15,10 +15,10 @@
         />
         <div class="card-body">
           <!-- <span >{{ user.image }}</span> -->
-          <span class="name">{{ user.name }}</span>
+          <span class="name mb-5">{{ user.name }}</span>
           <br />
           <i class="fas fa-phone-square-alt"></i>
-          <span class="p-1">+{{ user.phone }}</span>
+          <span class="p-1 mb-5">+{{ user.phone }}</span>
           <br />
           <i class="far fa-envelope"></i>
           <span class="p-1">{{ user.email }}</span>
@@ -48,7 +48,7 @@ export default {
     const db = app.firestore();
     try {
       const database = await db
-        .collection("users_firstf_ff")
+        .collection("first_year")
         .orderBy("timestamp", "asc");
       database.get().then(querySnapshot => {
         querySnapshot.forEach(doc => {
@@ -69,10 +69,13 @@ export default {
 
 <style scoped>
 .name {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 2px;
   font-weight: 600;
   /* font-family: "Courier New", Courier, monospace; */
+}
+.card-body {
+  font-size: 110%;
 }
 .column {
   flex: 25%;

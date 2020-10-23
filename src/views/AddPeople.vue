@@ -7,16 +7,18 @@
         <form action="" class="signup" @submit.prevent="AddBlog">
           <div>
             <input
+              class="input"
               type="text"
               id="name"
               v-model="name"
               required
               autofocus
-              placeholder="name"
+              placeholder="Name"
             />
             <br />
             <br />
             <input
+              class="input"
               type="text"
               id="name"
               v-model="phone"
@@ -27,6 +29,7 @@
             <br />
             <br />
             <input
+              class="input"
               type="text"
               id="name"
               v-model="email"
@@ -35,22 +38,12 @@
             />
             <br />
             <br />
-            <input
-              type="text"
-              id="name"
-              v-model="description"
-              required
-              autofocus
-              placeholder="Description about you"
-            />
-            <br />
-            <br />
             <span style="color:blue">Choose your profile picture</span>
             <input
               type="file"
               @change="previewImage"
-              required
               accept="image/*"
+              alt="img"
             />
             <br />
             <br />
@@ -88,37 +81,31 @@ export default {
     };
   },
   methods: {
-    previewImage(event) {
+    async previewImage(event) {
       this.picture = null;
       this.imageData = null;
       this.imageData = event.target.files[0];
-      //   if (this.imageData == null)
-      //     this.imageData = "https://source.unsplash.com/user/erondu/1600x900";
-      const storageRef = app
-        .storage()
-        .ref("peoples/" + Date.now())
-        .put(this.imageData);
-      storageRef.on(
-        `state_changed`,
-        snapshot => {
-          this.uploadValue =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        },
-        error => {
-          console.log(error.message);
-        },
-        () => {
-          this.uploadValue = 100;
-          storageRef.snapshot.ref.getDownloadURL().then(url => {
-            this.picture = url;
-          });
-        }
-      );
     },
     async AddBlog() {
+      console.log("Now here");
       const db = app.firestore();
+      var snapshot;
+      try {
+        snapshot = await app
+          .storage()
+          .ref("peoples/" + Date.now())
+          .put(this.imageData);
+      } catch (error) {
+        console.log(error.message);
+      }
+      this.picture = await snapshot.ref.getDownloadURL();
+      //   this.picture = "https://source.unsplash.com/user/erondu/1600x900";
+
+      console.log("Now here again");
+
       var curusername = app.auth().currentUser.displayName;
-      db.collection("users_firstf_ff")
+      await db
+        .collection("first_year")
         .doc()
         .set({
           name: this.name,
@@ -135,14 +122,6 @@ export default {
         .catch(function(error) {
           console.error("Error writing document: ", error);
         });
-
-      //   await setTimeout(() => {
-      //     console.log("World!");
-      //   }, 7000);
-      const delay = ms => new Promise(res => setTimeout(res, ms));
-
-      await delay(1500);
-
       this.$router.push("/people");
     }
   }
@@ -150,6 +129,9 @@ export default {
 </script>
 
 <style scoped>
+.input {
+  font-size: 20px;
+}
 .addblog {
   min-height: 100vh;
   padding: 0;
