@@ -21,7 +21,14 @@
             :class="[currentPage.includes('team') ? activeClass : '']"
             >Meet the team</b-nav-item
           >
+          <b-nav-item
+            href="#"
+            to="/allnotice"
+            :class="[currentPage.includes('allnotice') ? activeClass : '']"
+            >Notice Board</b-nav-item
+          >
         </b-navbar-nav>
+        
         <b-collapse id="nav-collapse" is-nav>
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
