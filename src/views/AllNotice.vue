@@ -2,60 +2,82 @@
   <section class="body">
       <div>
       <h1 class=heading>Notice Board</h1>
-      <Notice v-on:add-not="addnotice"/>
+      <!-- <Notice/> -->
+      <p style="padding:10px;text-align:center;">Want to Add a notice?<router-link style="color:red;" to="/notice"> Click here!</router-link></p>
       <ul v-if="noticearr.length!==0">
-          <li v-for="not in noticearr" :key="not.id">{{not.notices}}</li>
+          <li v-for="not in noticearr" :key="not.id"><small style="text-align:">Published by: {{not.user}}</small><br><span style="font-family:san-serif;font-size:23px">{{not.notices }}</span></li>
       </ul>
      
       <ul v-else>
         <li>There is no notice at present right now</li>
       </ul>
-        <!-- <p>Want to Add a notice?<router-link to="/notice"> Click here!</router-link></p> -->
+        
       </div>
        
   </section>
 </template>
 
 <script>
-import Notice from "./Notice";
+// import Notice from "./Notice";
+import firebase from 'firebase';
 export default {
     
   components:{
-      Notice,
+    //   Notice,
   },
   name: "AllNotice",
   data(){
       return{
-          noticearr:[
-            {
-                id:1,
-                notices:'xyz',
-               
-            }
-          ]
+          noticearr:[],
       }
 
   },
   methods:{
-      addnotice(newnotice){
-          this.noticearr=[...this.noticearr,newnotice];
+      fetchnotice(){
+          var db=firebase.firestore();
+          db.collection('noticeboard').orderBy('createdtime','desc').onSnapshot((querySnapshot)=>{
+              let allnotice=[];
+              querySnapshot.forEach(doc=>{
+                  allnotice.push(doc.data())
+              })
+            
+              this.noticearr=allnotice;
+          })
       }
+  },
+  created(){
+      this.fetchnotice();
+  },
+  beforeRouteEnter(to,from,next){
+      next(vm=>{
+          firebase.auth().onAuthStateChanged(user=>{
+              if(user){
+                  vm.$router.push('/allnotice')
+
+              }
+              else{
+                  alert('You need to Sign-in to see the Noticeboard');
+                  vm.$router.push('/login')
+              }
+          })
+      })
   }
 };
 </script>
 
 <style scoped>
 .body{
-    background-color:yellowgreen;
+    background: linear-gradient(to bottom right, pink, #bcbdc4);
     padding: 15px;
+    min-height:400px;
 
 }
 
 .heading{
-    background-color:teal;
+    background-color:#1e0c42;
     margin:auto;
     width:90%;
-    max-width:30rem;
+    max-width:40rem;
     padding:15px;
     border-radius:10px;
     color:whitesmoke;
@@ -72,14 +94,14 @@ ul{
     list-style: none;
 }
 li{
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    box-shadow: 0 2px 8px #1e0c42;
     margin: 1rem auto;
     border-radius: 10px;
     padding: 1rem;
     text-align: center;
     width: 90%;
     max-width: 40rem;
-    background-color:thistle;
+    background-color:whitesmoke;
     font-family: 'Times New Roman', Times, serif;
     font-size: larger;
     

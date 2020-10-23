@@ -17,6 +17,12 @@
           >
           <b-nav-item
             href="#"
+            to="/allnotice"
+            :class="[currentPage.includes('allnotice') ? activeClass : '']"
+            >Notice Board</b-nav-item
+          >
+          <b-nav-item
+            href="#"
             to="/team"
             :class="[currentPage.includes('team') ? activeClass : '']"
             >Meet the team</b-nav-item

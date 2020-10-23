@@ -39,7 +39,18 @@ const routes = [
     path: "/team",
     name: "Team",
     component: () => import("../views/Team.vue")
-  }
+  },
+  {
+    path: "/notice",
+    name: "Notice",
+    component: () => import("../views/Notice.vue")
+  },
+  {
+    path: "/allnotice",
+    name: "AllNotice",
+    component: () => import("../views/AllNotice.vue")
+  },
+  
 ];
 
 const router = new VueRouter({
