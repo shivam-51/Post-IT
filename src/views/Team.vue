@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <h1 class="display-5 mt-3 text-center font-weight-bold">
-      Meet the Builders of Post-IT!
+      Meet the brains behind Post-IT!
     </h1>
     <hr />
     <br />

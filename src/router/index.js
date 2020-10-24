@@ -39,7 +39,22 @@ const routes = [
     path: "/team",
     name: "Team",
     component: () => import("../views/Team.vue")
+  },
+  {
+    path: "/people",
+    name: "People",
+    component: () => import("../views/People.vue")
+  },
+  {
+    path: "/addpeople/:id",
+    name: "AddPeople",
+    component: () => import("../views/AddPeople.vue")
   }
+  //   {
+  //     path: "/people/first",
+  //     name: "First",
+  //     component: () => import("../components/Family/First.vue")
+  //   }
 ];
 
 const router = new VueRouter({
