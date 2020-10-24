@@ -30,11 +30,20 @@
           <template v-slot:img>
             <img
               class="image img-fluid"
+              src="@/assets/IIESTlogo.png"
+              alt="image slot"
+            />
+          </template>
+        </b-carousel-slide>
+        <b-carousel-slide>
+          <template v-slot:img>
+            <img
+              class="image img-fluid"
               id="HR"
               src="@/assets/HR.jpeg"
               alt="image slot"
             />
-            <p style="margin-top:3px">
+            <p style="margin-top: 3px">
               <small
                 >Prof. Hafizur Rahaman,Former Head of Department<br />
                 with Prof. Mitsuo Ochi,President of Hiroshima University ,
@@ -42,15 +51,6 @@
               >
             </p>
             <br />
-          </template>
-        </b-carousel-slide>
-        <b-carousel-slide>
-          <template v-slot:img>
-            <img
-              class="image img-fluid"
-              src="@/assets/IIESTlogo.png"
-              alt="image slot"
-            />
           </template>
         </b-carousel-slide>
       </div>

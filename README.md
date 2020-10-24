@@ -28,6 +28,7 @@ npm run lint
 | Ritika Shrestha |  [RitikaShrestha-me](https://github.com/RitikaShrestha-me)  |
 | Aditya Agarwal  | [aditya2610](https://github.com/aditya2610/)    |
 | Nikhil Kumar    | [Nikblaze](https://github.com/nikblaze/)    |
+| Narapureddy Srikanth  | [Narapureddy-Srikanth](https://github.com/Narapureddy-Srikanth/)  | 
 
 
 
