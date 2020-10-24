@@ -9,7 +9,6 @@
         style="width: 24rem;"
       >
         <img
-          class="card-img-top"
           v-bind:src="user.image"
           alt="Card image cap"
         />
@@ -86,6 +85,9 @@ export default {
   flex: 25%;
   max-width: 30%;
   padding: 0 4px;
+}
+img{
+  height:230px;
 }
 .card {
   width: 50px;

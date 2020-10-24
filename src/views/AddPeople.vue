@@ -2,8 +2,8 @@
   <div class="addblog">
     <div class="container">
       <div class="card card-container">
-        <h1>Enter a new Entry</h1>
-        <h1>{{ this.id }}</h1>
+        <h1 style="text-align:center">Enter a new Entry</h1>
+        <h1 style="text-align:center">{{ this.id }}</h1>
         <br />
         <form action="" class="signup" @submit.prevent="AddBlog">
           <div>
@@ -20,12 +20,12 @@
             <br />
             <input
               class="input"
-              type="number"
+              type="phone"
               id="name"
               v-model="phone"
               required
               autofocus
-              placeholder="Number"
+              placeholder="Phone No."
             />
             <br />
             <br />
@@ -39,7 +39,7 @@
             />
             <br />
             <br />
-            <span style="color:blue">Choose your profile picture</span>
+            <span style="color:blue;">Choose your profile picture</span>
             <input
               type="file"
               @change="previewImage"
@@ -132,7 +132,9 @@ export default {
 
 <style scoped>
 .input {
-  font-size: 20px;
+  font-size: 17px;
+  padding:5px;
+  width:300px;
 }
 .addblog {
   min-height: 100vh;
@@ -153,8 +155,8 @@ export default {
   max-width: 600px;
   width: 400px;
   max-height: 650px;
-  height: 500px;
   padding: 40px 40px;
+  /* text-align: center; */
 }
 /*
  * Card component

@@ -1,7 +1,7 @@
 <template>
-  <div style="overflow: hidden">
+  <div class="body" style="overflow: hidden">
     <div class="center mt-4 mb-4 heading1">
-      <h1 v-if="kind != 'alumni' && kind != 'faculty'">
+      <h1 style="text-align:center" v-if="kind != 'alumni' && kind != 'faculty'">
         Meet the {{ kind }} year students of IT department
       </h1>
       <h1 v-else>Meet the {{ kind }} of IT department</h1>
@@ -10,22 +10,22 @@
       <div class="side-left  sidebar-container">
         <ul class="sidebar-navigation">
           <li>
-            <b-button @click.prevent="first">First Year</b-button>
+            <b-button class="btn" @click.prevent="first">First Year</b-button>
           </li>
           <li>
-            <b-button @click.prevent="second">Second Year</b-button>
+            <b-button class="btn" @click.prevent="second">Second Year</b-button>
           </li>
           <li>
             <b-button @click.prevent="third">Third Year</b-button>
           </li>
           <li>
-            <b-button @click.prevent="fourth">Fourth Year</b-button>
+            <b-button class="btn" @click.prevent="fourth">Fourth Year</b-button>
           </li>
           <li>
-            <b-button @click.prevent="alumni">Alumni</b-button>
+            <b-button class="btn" @click.prevent="alumni">Alumni</b-button>
           </li>
           <li>
-            <b-button @click.prevent="faculty">Faculty</b-button>
+            <b-button class="btn" @click.prevent="faculty">Faculty</b-button>
           </li>
         </ul>
       </div>
@@ -105,6 +105,13 @@ export default {
 >
 
 <style scoped>
+.body{
+  display:flex;
+  flex-direction: column;
+}
+.btn:active{
+  color:black;
+}
 .twitter-wrap {
   display: grid;
   grid-template-columns: 20% 60% 20%;
