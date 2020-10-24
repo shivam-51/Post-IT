@@ -1,8 +1,8 @@
 <template>
   <div style="overflow: hidden">
-    <div class="center mt-4 mb-4">
+    <div class="center mt-4 mb-4 heading1">
       <h1 v-if="kind != 'alumni' && kind != 'faculty'">
-        Meet the {{ kind }} year students of IT departments
+        Meet the {{ kind }} year students of IT department
       </h1>
       <h1 v-else>Meet the {{ kind }} of IT department</h1>
     </div>
@@ -109,6 +109,10 @@ export default {
   display: grid;
   grid-template-columns: 20% 60% 20%;
   /* position: relative; */
+}
+
+.heading1 {
+  text-shadow: 0px 1px 2px;
 }
 .center {
   /* height: 500px; */
