@@ -30,16 +30,35 @@
         </ul>
       </div>
       <div class="side-main">
-        <span v-show="kind == 'first'"> <First /> </span>
-        <span v-show="kind == 'second'"> <Second /> </span>
-        <span v-show="kind == 'third'"> <Third /> </span>
-        <span v-show="kind == 'fourth'"> <Fourth /> </span>
-        <span v-show="kind == 'alumni'"> <Alumni /> </span>
-        <span v-show="kind == 'faculty'"> <Faculty /> </span>
+        <span v-show="kind == 'first'"> <First username="first_year" /> </span>
+        <span v-show="kind == 'second'">
+          <First username="second_year" />
+        </span>
+        <span v-show="kind == 'third'"> <First username="third_year" /> </span>
+        <span v-show="kind == 'fourth'">
+          <First username="fourth_year" />
+        </span>
+        <span v-show="kind == 'alumni'"> <First username="alumni" /> </span>
+        <span v-show="kind == 'faculty'"> <First username="faculty" /> </span>
       </div>
       <div class="side-main center">
         <div class="fixed-btn ml-auto">
-          <router-link to="./addpeople"
+          <router-link v-show="kind == 'first'" to="/addpeople/first_year"
+            ><i class="fas fa-plus fa-sm"></i
+          ></router-link>
+          <router-link v-show="kind == 'second'" to="/addpeople/second_year"
+            ><i class="fas fa-plus fa-sm"></i
+          ></router-link>
+          <router-link v-show="kind == 'third'" to="/addpeople/third_year"
+            ><i class="fas fa-plus fa-sm"></i
+          ></router-link>
+          <router-link v-show="kind == 'fourth'" to="/addpeople/fourth_year"
+            ><i class="fas fa-plus fa-sm"></i
+          ></router-link>
+          <router-link v-show="kind == 'alumni'" to="/addpeople/alumni"
+            ><i class="fas fa-plus fa-sm"></i
+          ></router-link>
+          <router-link v-show="kind == 'faculty'" to="/addpeople/faculty"
             ><i class="fas fa-plus fa-sm"></i
           ></router-link>
         </div>
@@ -50,11 +69,6 @@
 
 <script>
 import First from "../components/Family/First";
-import Second from "../components/Family/Second";
-import Third from "../components/Family/Third";
-import Fourth from "../components/Family/Fourth";
-import Alumni from "../components/Family/Alumni";
-import Faculty from "../components/Family/Faculty";
 
 export default {
   name: "People",
@@ -64,12 +78,7 @@ export default {
     };
   },
   components: {
-    First,
-    Second,
-    Third,
-    Fourth,
-    Alumni,
-    Faculty
+    First
   },
   methods: {
     first() {

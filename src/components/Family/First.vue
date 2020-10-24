@@ -39,6 +39,9 @@ import "firebase/firestore";
 
 export default {
   name: "first",
+  props: {
+    username: String
+  },
   data() {
     return {
       users: []
@@ -46,9 +49,10 @@ export default {
   },
   async created() {
     const db = app.firestore();
+    // console.log(this.username);
     try {
       const database = await db
-        .collection("first_year")
+        .collection(this.username)
         .orderBy("timestamp", "asc");
       database.get().then(querySnapshot => {
         querySnapshot.forEach(doc => {

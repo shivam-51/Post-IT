@@ -46,7 +46,7 @@ const routes = [
     component: () => import("../views/People.vue")
   },
   {
-    path: "/addpeople",
+    path: "/addpeople/:id",
     name: "AddPeople",
     component: () => import("../views/AddPeople.vue")
   }
@@ -54,11 +54,6 @@ const routes = [
   //     path: "/people/first",
   //     name: "First",
   //     component: () => import("../components/Family/First.vue")
-  //   },
-  //   {
-  //     path: "/people/second",
-  //     name: "Second",
-  //     component: () => import("../components/Family/Second.vue")
   //   }
 ];
 

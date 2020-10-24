@@ -3,6 +3,7 @@
     <div class="container">
       <div class="card card-container">
         <h1>Enter a new Entry</h1>
+        <h1>{{ this.id }}</h1>
         <br />
         <form action="" class="signup" @submit.prevent="AddBlog">
           <div>
@@ -19,7 +20,7 @@
             <br />
             <input
               class="input"
-              type="text"
+              type="number"
               id="name"
               v-model="phone"
               required
@@ -67,9 +68,10 @@ import "firebase/auth";
 import "firebase/storage";
 
 export default {
-  name: "login",
+  name: "addpeople",
   data() {
     return {
+      id: this.$route.params.id,
       name: null,
       phone: null,
       email: null,
@@ -105,7 +107,7 @@ export default {
 
       var curusername = app.auth().currentUser.displayName;
       await db
-        .collection("first_year")
+        .collection(String(this.id))
         .doc()
         .set({
           name: this.name,
