@@ -48,7 +48,8 @@ const routes = [
   {
     path: "/addpeople/:id",
     name: "AddPeople",
-    component: () => import("../views/AddPeople.vue")
+    component: () => import("../views/AddPeople.vue"),
+    meta: { requiresAuth: true }
   }
   //   {
   //     path: "/people/first",

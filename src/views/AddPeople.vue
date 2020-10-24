@@ -153,7 +153,7 @@ export default {
   max-width: 600px;
   width: 400px;
   max-height: 650px;
-  height: 470px;
+  height: 500px;
   padding: 40px 40px;
 }
 /*
