@@ -27,6 +27,11 @@
             :class="[currentPage.includes('team') ? activeClass : '']"
             >Meet the team</b-nav-item
           >
+          <b-nav-item
+            to="/people"
+            :class="[currentPage.includes('people') ? activeClass : '']"
+            >People</b-nav-item
+          >
         </b-navbar-nav>
         <b-collapse id="nav-collapse" is-nav>
           <!-- Right aligned nav items -->
