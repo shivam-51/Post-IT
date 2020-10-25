@@ -2,15 +2,11 @@
 
   <div>
     <div class="icon-bar">
-<<<<<<< HEAD
    
     <a href="https://www.iiests.ac.in/" class="iiest1"><i class="fas fa-school"></i></a>   
     <a href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit" class="facebook"><i class="fab fa-facebook-f"></i></a> 
-=======
-    
     <a href="https://www.iiests.ac.in/" class="iiest1"><i class="fas fa-school"></i></a>  
     <a href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit" class="facebook"><i class="fab fa-facebook-f"></i></a>  
->>>>>>> e9f49c8b4f55859ac0b29d4b6c5f8ff80bed6642
     <a href="https://twitter.com/iiest_s" class="twitter"><i class="fab fa-twitter"></i></a> 
     <a href="https://iiests.irins.org/" class="vidwan"><i class="fas fa-lightbulb"></i></a> 
     <a href="https://www.linkedin.com/school/iiests/" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
