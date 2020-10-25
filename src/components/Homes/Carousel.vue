@@ -2,11 +2,12 @@
 
   <div>
     <div class="icon-bar">
- <a href="https://www.facebook.com/iiest.shibpur.official" class="facebook"><i class="fab fa-facebook-f"></i></a> 
+    <a herf="https://www.iiests.ac.in/" class="iiest1"><i class="fas fa-school"></i></a>  
+ <a href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit" class="facebook"><i class="fab fa-facebook-f"></i></a> 
   <a href="https://twitter.com/iiest_s" class="twitter"><i class="fab fa-twitter"></i></a> 
   <a href="https://iiests.irins.org/" class="vidwan"><i class="fas fa-lightbulb"></i></a> 
   <a href="https://www.linkedin.com/school/iiests/" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-  <a href="shivamhere247@gmail.com" class="gmail"><i class="  fas fa-envelope"></i></a> 
+  <a href="mailto:shivamhere247@gmail.com" class="gmail"><i class="  fas fa-envelope"></i></a> 
 </div>
     <b-carousel
       id="carousel"
@@ -121,7 +122,10 @@
 .icon-bar a:hover {
   background-color: #000;
 }
-
+.iiest1 {
+  background: limegreen;
+  color: white;
+}
 .facebook {
   background: #3B5998;
   color: white;
@@ -146,5 +150,6 @@
   background: #bb0000;
   color: white;
 }
+
 
 </style>
