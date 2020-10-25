@@ -1,123 +1,129 @@
 <template>
-    <section class='body'>
-        
-    <div class='formbody'>
-        <h1 style="font-family:san-serif;text-align:center">Add a Notice</h1>
+  <section class="body">
+    <div class="formbody">
+      <h1 style="font-family: san-serif; text-align: center">Add a Notice</h1>
       <form @submit="addnot" class="form">
-      <input class="inp" type="text" placeholder="Add a Notice..." v-model="notices">
-      <div style="text-align:center"><input type="submit" value="Submit" class="btn"></div>
+        <textarea
+          class="inp"
+          type="text"
+          placeholder="Add a Notice..."
+          v-model="notices"
+        ></textarea>
+        <div style="text-align: center">
+          <input type="submit" value="Submit" class="btn" />
+        </div>
       </form>
-          
-  </div>
-    </section>
+    </div>
+  </section>
 </template>
 
 <script>
 // import uuid from 'uuid';
-import firebase from 'firebase';
+import firebase from "firebase";
 export default {
-    name:"Notice",
-    data(){
-        return{
-            notices:'',
-            createdtime:null,
-            user:''
-        }
-    },
-    methods:
-    {
-        addnot()
-        {
-          var db=firebase.firestore();
-          db.collection('noticeboard').add(
-              {
-                  notices:this.notices,
-                  createdtime:new Date(),
-                  user:this.user.displayName,
-              }
-          )
-          this.$router.push("/allnotice");
-          this.notices='';
-        }
-      },
-      created(){
-      firebase.auth().onAuthStateChanged(user=>{
-          if(user){
-              this.user=user;    
-
-          }
-      })
+  name: "Notice",
+  data() {
+    return {
+      notices: "",
+      createdtime: null,
+      user: "",
+      timestamp: "",
+    };
   },
-
-   
-  
-}
-
+  methods: {
+    getnow:function() {
+      const today = new Date();
+      const date =
+        today.getDate() +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getFullYear();
+      const time =
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      this.timestamp = date + " | " + time;
+    },
+    addnot() {
+      var db = firebase.firestore();
+      this.getnow();
+      db.collection("noticeboard").add({
+        notices: this.notices,
+        createdtime: new Date(),
+        user: this.user.displayName,
+        timestamp: this.timestamp,
+      });
+      this.$router.push("/allnotice");
+      this.notices = "";
+    },
+  },
+  created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.user = user;
+      }
+    });
+  },
+};
 </script>
 
 <style scoped>
-.body{
-        background: linear-gradient(to bottom right, pink, #bcbdc4);
-        align-items: center;
+.body {
+  background: linear-gradient(to bottom right, white, #bcbdc4);
+  align-items: center;
+}
+.formbody {
+  max-width: 60%;
+  margin: auto;
+  padding: 100px;
+}
+.form {
+  flex: auto;
+  padding: 15px;
+  align-items: center;
+}
+.heading {
+  background-color: teal;
 
+  margin: 5rem auto;
+  margin-bottom: 2rem;
+  width: 90%;
+  max-width: 50rem;
+  padding: 15px;
+  border-radius: 10px;
+  color: whitesmoke;
+  text-align: center;
+  box-shadow: gray 3px 3px 3px;
 }
-.formbody{
-    
-    max-width: 60%;
-    margin:auto;
-    padding:100px;
-}
-.form{
-    flex:auto;
-    padding:15px;
-    align-items: center;
-    
+.btn {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid #ff0077;
+  background-color: #ff0077;
 
-}
-.heading{
-    background-color:teal;
-   
-    margin:5rem auto;
-    margin-bottom:2rem;
-    width:90%;
-    max-width:50rem;
-    padding:15px;
-    border-radius:10px;
-    color:whitesmoke;
-    text-align: center;
-    box-shadow:gray 3px 3px 3px;
+  color: white;
+  padding: 15px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
 
-
+  width: 80px;
+  /* height:60px; */
+  display: inline-block;
 }
-.btn{
-    font: inherit;
-    cursor: pointer;
-    border: 1px solid #ff0077;
-    background-color: #ff0077;
-    
-    color: white;
-    padding:15px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
-
-  
-    width:80px;
-    /* height:60px; */
-    display: inline-block;
+.btn:hover {
+  background-color: #ec3169;
+  border-color: #ec3169;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
-.btn:hover{
-    background-color: #ec3169;
-    border-color: #ec3169;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
-}
-.inp{
-    margin-top:10px;
-    margin-bottom:10px;
-    width:100%;
-    max-width:70rem;
-    padding:15px;
-    color:black;
-    border:2px solid darkblue;
-    box-shadow:gray 3px 3px 3px;
-    /* text-align: center; */
+.inp {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 70rem;
+  padding: 15px;
+  color: black;
+  border: 2px solid darkblue;
+  box-shadow: gray 3px 3px 3px;
+  max-height: 130px;
+  min-height: 130px;
+  /* text-align: center; */
 }
 </style>

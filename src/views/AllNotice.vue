@@ -4,13 +4,27 @@
       <h1 class=heading>Notice Board</h1>
       <!-- <Notice/> -->
       <p style="padding:10px;text-align:center;">Want to Add a notice?<router-link style="color:red;" to="/notice"> Click here!</router-link></p>
-      <ul v-if="noticearr.length!==0">
-          <li v-for="not in noticearr" :key="not.id"><small style="text-align:">Published by: {{not.user}}</small><br><span style="font-family:san-serif;font-size:23px">{{not.notices }}</span></li>
+      <ul id="datalist" v-if="noticearr.length!==0">
+          <!-- <li v-for="not in noticearr" :key="not.id"><small style="text-align:">Published by: {{not.user}}</small><br><span style="font-family:san-serif;font-size:23px">{{not.notices }} <br> <small class="color:blue;text-align:right">{{ not.timestamp}}</small></span></li> -->
+          <li v-for="not in noticearr" :key="not.id">
+              <div style="text-align:right;color:blue;padding:5px">
+                  <small>{{not.user}}</small>
+              </div>
+              <div style="font-size:20px;text-align:left;padding:5px">
+                  <strong>{{not.notices}}</strong>
+              </div>
+              <div style="text-align:right;color:blue">
+                  <small>{{not.timestamp}}</small>
+              </div>
+
+          </li>
+
       </ul>
-     
       <ul v-else>
         <li>There is no notice at present right now</li>
       </ul>
+     
+      
         
       </div>
        
@@ -19,6 +33,7 @@
 
 <script>
 // import Notice from "./Notice";
+
 import firebase from 'firebase';
 export default {
     
@@ -33,6 +48,8 @@ export default {
 
   },
   methods:{
+   
+     
       fetchnotice(){
           var db=firebase.firestore();
           db.collection('noticeboard').orderBy('createdtime','desc').onSnapshot((querySnapshot)=>{
@@ -67,22 +84,24 @@ export default {
 
 <style scoped>
 .body{
-    background: linear-gradient(to bottom right, pink, #bcbdc4);
+    background: linear-gradient(to bottom right, white, #bcbdc4);
     padding: 15px;
     min-height:400px;
 
 }
 
 .heading{
-    background-color:#1e0c42;
+    background-image:url('../assets/images.png');
+    background-size: 650px;
     margin:auto;
     width:90%;
     max-width:40rem;
     padding:15px;
     border-radius:10px;
-    color:whitesmoke;
+    color:white;
     text-align: center;
-
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:50px;
 
 }
 p{
@@ -128,6 +147,7 @@ button:hover{
     padding:15px;
     border-radius:10px;
     color:black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
     /* text-align: center; */
 }
 </style>
