@@ -66,7 +66,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .card-container {
   max-width: 60rem;
   margin-top: 70px;

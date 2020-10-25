@@ -3,24 +3,50 @@
     <div class="container">
       <div class="card card-container">
         <h1>Enter a new Entry</h1>
+        <h1>{{ this.id }}</h1>
         <br />
         <form action="" class="signup" @submit.prevent="AddBlog">
           <div>
             <input
+              class="input"
               type="text"
-              id="title"
-              v-model="title"
+              id="name"
+              v-model="name"
               required
               autofocus
-              placeholder="Title"
+              placeholder="Name"
             />
-            <textarea
-              type="text"
-              id="description"
-              v-model="description"
-              placeholder="Description"
+            <br />
+            <br />
+            <input
+              class="input"
+              type="number"
+              id="name"
+              v-model="phone"
               required
+              autofocus
+              placeholder="Number"
             />
+            <br />
+            <br />
+            <input
+              class="input"
+              type="text"
+              id="name"
+              v-model="email"
+              required
+              placeholder="Email"
+            />
+            <br />
+            <br />
+            <span style="color:blue">Choose your profile picture</span>
+            <input
+              type="file"
+              @change="previewImage"
+              accept="image/*"
+              alt="img"
+            />
+            <br />
             <br />
             <button
               class="btn btn-lg btn-primary btn-block btn-postit"
@@ -39,35 +65,55 @@
 import app from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import "firebase/storage";
 
 export default {
-  name: "login",
+  name: "addpeople",
   data() {
     return {
-      title: null,
+      id: this.$route.params.id,
+      name: null,
+      phone: null,
+      email: null,
       description: null,
-      timestamp: null
+      timestamp: null,
+      imageData: null,
+      picture: null,
+      uploadValue: null
     };
   },
   methods: {
-    AddBlog() {
-      // Add a new document in collection "blogs"
+    async previewImage(event) {
+      this.picture = null;
+      this.imageData = null;
+      this.imageData = event.target.files[0];
+    },
+    async AddBlog() {
+      console.log("Now here");
       const db = app.firestore();
-      //   var curuser = firebase.auth().currentUser;
-      //   console.log(curuser);
-      var curusername = app.auth().currentUser.displayName;
+      var snapshot;
+      try {
+        snapshot = await app
+          .storage()
+          .ref("peoples/" + Date.now())
+          .put(this.imageData);
+      } catch (error) {
+        console.log(error.message);
+      }
+      this.picture = await snapshot.ref.getDownloadURL();
+      //   this.picture = "https://source.unsplash.com/user/erondu/1600x900";
 
-      //   if (curuser) {
-      //     console.log("User" + "=>" + firebase.auth().currentUser.email);
-      //     // User is signed in.
-      //   } else {
-      //     console.log("No User");
-      //     // No user is signed in.
-      //   }
-      db.collection("blogs_third")
+      console.log("Now here again");
+
+      var curusername = app.auth().currentUser.displayName;
+      await db
+        .collection(String(this.id))
         .doc()
         .set({
-          title: this.title,
+          name: this.name,
+          phone: this.phone,
+          email: this.email,
+          image: this.picture,
           description: this.description,
           timestamp: Date.now(),
           user: curusername
@@ -78,15 +124,16 @@ export default {
         .catch(function(error) {
           console.error("Error writing document: ", error);
         });
-      this.$router.push("/allblog");
-      this.title = null;
-      this.description = null;
+      this.$router.push("/people");
     }
   }
 };
 </script>
 
 <style scoped>
+.input {
+  font-size: 20px;
+}
 .addblog {
   min-height: 100vh;
   padding: 0;
@@ -103,9 +150,10 @@ export default {
   justify-content: center;
 }
 .card-container.card {
-  max-width: 750px;
+  max-width: 600px;
+  width: 400px;
   max-height: 650px;
-  height: 620px;
+  height: 500px;
   padding: 40px 40px;
 }
 /*
@@ -127,24 +175,4 @@ export default {
 /*
  * Form styles
  */
-#title,
-#description {
-  padding: 10px;
-  width: 100%;
-  /* display: block; */
-  margin-bottom: 20px;
-  font-size: 20px;
-  /* height: 50px;
-  max-height: 50px; */
-  z-index: 1;
-  /* position: relative; */
-  /* -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; */
-}
-
-#description {
-  max-height: 320px;
-  min-height: 320px;
-}
 </style>
