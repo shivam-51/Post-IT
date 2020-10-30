@@ -2,8 +2,7 @@
   <div class="addblog">
     <div class="container">
       <div class="card card-container">
-        <h1>Enter a new Entry</h1>
-        <h1>{{ this.id }}</h1>
+        <h1 id="header">Enter a new Entry</h1>
         <br />
         <form action="" class="signup" @submit.prevent="AddBlog">
           <div>
@@ -39,7 +38,7 @@
             />
             <br />
             <br />
-            <span style="color:blue">Choose your profile picture</span>
+            <span style="color:blue;padding:5px;">Choose your profile picture</span>
             <input
               type="file"
               @change="previewImage"
@@ -132,7 +131,10 @@ export default {
 
 <style scoped>
 .input {
-  font-size: 20px;
+  font-size: 16px;
+  padding:5px;
+  width:100%;
+
 }
 .addblog {
   min-height: 100vh;
@@ -153,8 +155,10 @@ export default {
   max-width: 600px;
   width: 400px;
   max-height: 650px;
-  height: 500px;
   padding: 40px 40px;
+}
+#header{
+  text-align: center;
 }
 /*
  * Card component
