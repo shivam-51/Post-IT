@@ -3,7 +3,6 @@
     <div class="container">
       <div class="card card-container">
         <h1 id="header">Enter a new Entry</h1>
-        <h1 id="header">{{ this.id }}</h1>
         <br />
         <form action="" class="signup" @submit.prevent="AddBlog">
           <div>
