@@ -152,7 +152,7 @@ export default {
 .card-container.card {
   max-width: 600px;
   width: 400px;
-  max-height: 650px;
+  max-height: 651px;
   height: 500px;
   padding: 40px 40px;
 }
