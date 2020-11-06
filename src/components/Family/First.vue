@@ -11,7 +11,7 @@
         <img
           class="card-img-top"
           v-bind:src="user.image"
-          alt="Card image cap"
+          alt="Card image cap" style="height:230px;"
         />
         <div class="card-body">
           <!-- <span >{{ user.image }}</span> -->

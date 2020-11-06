@@ -26,6 +26,11 @@
             :class="[currentPage.includes('people') ? activeClass : '']"
             >People</b-nav-item
           >
+          <b-nav-item
+            to="/allnotice"
+            :class="[currentPage.includes('addnotice') ? activeClass : '']"
+            >Notice Board</b-nav-item
+          >
         </b-navbar-nav>
         <b-collapse id="nav-collapse" is-nav>
           <!-- Right aligned nav items -->
