@@ -38,9 +38,7 @@ export default {
         (today.getMonth() + 1) +
         "-" +
         today.getFullYear();
-      var time =
-        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      this.timestamp = date + " " + time;
+      this.timestamp = date;
     },
     async addnot() {
       this.gettime();

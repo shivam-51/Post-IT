@@ -6,15 +6,21 @@
       <p style="padding:10px;text-align:center;">Want to Add a notice?<router-link style="color:red;" to="/addnotice"> Click here!</router-link></p>
       <ul v-if="noticearr.length!==0">
           <li v-for="not in noticearr" :key="not.id">
-              <div style="text-align:right">
-                  <span style="color:blue"><small>By: {{not.user}}</small></span>
+              <div style="float:left">
+                  <span style="color:blue"><small><strong>{{not.user+'  '}}</strong></small></span>
+                  <span style="color:transparent">|</span>
+                  <i class='far fa-calendar-alt' style='font-size:11px;color:blue'></i>
+                  <span style="color:transparent">|</span>
+                  
               </div>
-              <div style="text-align:left">
-                  <span><strong>{{not.notices}}</strong></span>
-              </div>
-              <div style="text-align:right">
+                &nbsp;
+              <div style="margin:0px">
                   <span style="color:blue"><small>{{not.timestamp}}</small></span>
               </div>
+              <div style="text-align:left;clear:both">
+                  <span><strong>{{not.notices}}</strong></span>
+              </div>
+              
           </li>
       </ul>
      
@@ -25,7 +31,7 @@
       </div>
        
   </section>
-</template>y
+</template>
 
 
 <script>
@@ -109,7 +115,6 @@ li{
     margin: 1rem auto;
     border-radius: 10px;
     padding: 1rem;
-    text-align: center;
     width: 90%;
     max-width: 40rem;
     background-color:whitesmoke;
@@ -132,13 +137,5 @@ button:hover{
     border-color: #ec3169;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
-.inp{
-    margin:1rem auto;
-    width:90%;
-    max-width:50rem;
-    padding:15px;
-    border-radius:10px;
-    color:black;
-    /* text-align: center; */
-}
+
 </style>
