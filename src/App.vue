@@ -3,7 +3,7 @@
     <Loading :isLoading="isLoading" />
     <main v-if="!isLoading">
       <Navbar title="Post-IT" />
-      <div style="height:75px "></div>
+      <div style="height:73px "></div>
       <router-view />
       <Footer />
     </main>

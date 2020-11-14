@@ -3,17 +3,16 @@
     <b-navbar toggleable="lg" type="" variant="info">
       <b-navbar-brand href="#" to="/">
         <img class="icon" src="../../src/assets/PIlogodark.png" width="39" />
-        <!-- <div style="color:blue" class="pr-5"> -->
         Post-IT
-        <!-- </div> -->
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
+      <b-collapse is-nav>
+        <b-navbar-nav class="cl-effect-1" id="cl-effect-1">
           <b-nav-item
             href="#"
             to="/allblog"
+            class="buttons"
             :class="[currentPage.includes('allblog') ? activeClass : '']"
             >Blogs</b-nav-item
           >
@@ -35,14 +34,14 @@
             <b-button
               v-if="!user && !currentPage.includes('signup')"
               variant="outline-danger"
-              class="mr-3"
+              class="mr-4"
               to="signup"
               >Sign Up</b-button
             >
             <b-button
               v-if="!user && !currentPage.includes('login')"
               variant="outline-danger"
-              class="mr-2"
+              class="mr-5"
               to="login"
               >Log In</b-button
             >
@@ -93,12 +92,73 @@ export default {
 
 <style scoped>
 .bg-info {
-  background-color: white !important;
+  background-color: #1e0c42 !important;
   padding: 0.7rem;
   box-shadow: 1px 1px 8px;
 }
 .icon {
   display: inline-block;
   margin-right: 2px;
+}
+/* .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1em;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  text-transform: uppercase;
+  position: relative;
+  padding: 8px 0;
+  overflow: hidden;
+  display: inline-block;
+  margin: 5px;
+} */
+/* Effect 1: Brackets */
+.cl-effect-1 a::before,
+.cl-effect-1 a::after {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1 a::before {
+  margin-right: 10px;
+  content: "[";
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+}
+a {
+  font-weight: 500;
+  /* color: #111; */
+  font-size: 2.8vh;
+}
+
+.cl-effect-1 a::after {
+  margin-left: 10px;
+  content: "]";
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px);
+}
+
+.cl-effect-1 a:hover::before,
+.cl-effect-1 a:hover::after,
+.cl-effect-1 a:focus::before,
+.cl-effect-1 a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px);
 }
 </style>
