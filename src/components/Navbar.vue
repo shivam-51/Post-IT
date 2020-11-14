@@ -1,18 +1,17 @@
 <template>
-  <div fixed:top class="  rounded fixed-top" id="navbar">
-    <b-navbar toggleable="lg" type="" variant="info">
+  <div fixed:top class=" bg-white rounded" id="navbar">
+    <b-navbar toggleable="lg" type="dark" variant="info" class="pl-5">
       <b-navbar-brand href="#" to="/">
-        <img class="icon" src="../../src/assets/PIlogodark.png" width="39" />
+        <img class="icon" src="../../src/assets/PIlogo.png" width="39" />
         Post-IT
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <b-collapse is-nav>
-        <b-navbar-nav class="cl-effect-1" id="cl-effect-1">
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav class="cl-effect-1">
           <b-nav-item
             href="#"
             to="/allblog"
-            class="buttons"
             :class="[currentPage.includes('allblog') ? activeClass : '']"
             >Blogs</b-nav-item
           >
@@ -33,19 +32,46 @@
           <b-navbar-nav class="ml-auto">
             <b-button
               v-if="!user && !currentPage.includes('signup')"
-              variant="outline-danger"
-              class="mr-4"
+              variant="outline-warning"
+              class="mr-3"
               to="signup"
               >Sign Up</b-button
             >
             <b-button
               v-if="!user && !currentPage.includes('login')"
-              variant="outline-danger"
-              class="mr-5"
+              variant="outline-warning"
+              class="mr-2"
               to="login"
               >Log In</b-button
             >
             <b-button v-if="user" @click.prevent="signout"> Sign Out</b-button>
+            <!-- <b-nav-item-dropdown right>
+                            <template v-slot:button-content>
+                                <display4>User</display4>
+                            </template>
+                            <b-dropdown-item href="#">Profile</b-dropdown-item>
+                            <b-dropdown-item href="#" to="/About"
+                                >Sign Out</b-dropdown-item
+                            >
+                        </b-nav-item-dropdown> -->
+            <!-- </b-navbar-nav>
+                    <b-navbar-nav> -->
+            <!-- Navbar dropdowns -->
+            <b-nav-item-dropdown text="☰" right>
+              <b-dropdown-item href="https://www.iiests.ac.in/" target="_blank"
+                >IIEST</b-dropdown-item
+              >
+              <b-dropdown-item
+                href="https://www.iiests.ac.in/IIEST/AcaUnitDetails/IT"
+                target="_blank"
+                >IT-IIEST</b-dropdown-item
+              >
+              <b-dropdown-item
+                href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit"
+                target="_blank"
+                >SOCIT</b-dropdown-item
+              >
+            </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
       </b-collapse>
@@ -94,34 +120,15 @@ export default {
 .bg-info {
   background-color: #1e0c42 !important;
   padding: 0.7rem;
-  box-shadow: 1px 1px 8px;
+  box-shadow: 2px 2px 8px;
 }
 .icon {
   display: inline-block;
   margin-right: 2px;
 }
-/* .nav-link {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
-  color: white;
-  font-size: 1em;
-  font-weight: 600;
-  text-decoration: none;
-  line-height: 1em;
-  cursor: pointer;
-  -webkit-transition: 0.2s ease-in-out;
-  -moz-transition: 0.2s ease-in-out;
-  -ms-transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  text-transform: uppercase;
-  position: relative;
-  padding: 8px 0;
-  overflow: hidden;
-  display: inline-block;
-  margin: 5px;
-} */
-/* Effect 1: Brackets */
+.nav-link {
+  font-size: 17px;
+}
 .cl-effect-1 a::before,
 .cl-effect-1 a::after {
   display: inline-block;
@@ -137,11 +144,6 @@ export default {
   -webkit-transform: translateX(20px);
   -moz-transform: translateX(20px);
   transform: translateX(20px);
-}
-a {
-  font-weight: 500;
-  /* color: #111; */
-  font-size: 2.8vh;
 }
 
 .cl-effect-1 a::after {
