@@ -1,9 +1,11 @@
 <template>
-  <div fixed:top class=" bg-white rounded" id="navbar">
-    <b-navbar toggleable="lg" type="dark" variant="info">
+  <div fixed:top class="  rounded fixed-top" id="navbar">
+    <b-navbar toggleable="lg" type="" variant="info">
       <b-navbar-brand href="#" to="/">
-        <img class="icon" src="../../src/assets/PIlogo.png" width="39" />
+        <img class="icon" src="../../src/assets/PIlogodark.png" width="39" />
+        <!-- <div style="color:blue" class="pr-5"> -->
         Post-IT
+        <!-- </div> -->
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -32,46 +34,19 @@
           <b-navbar-nav class="ml-auto">
             <b-button
               v-if="!user && !currentPage.includes('signup')"
-              variant="outline-warning"
+              variant="outline-danger"
               class="mr-3"
               to="signup"
               >Sign Up</b-button
             >
             <b-button
               v-if="!user && !currentPage.includes('login')"
-              variant="outline-warning"
+              variant="outline-danger"
               class="mr-2"
               to="login"
               >Log In</b-button
             >
             <b-button v-if="user" @click.prevent="signout"> Sign Out</b-button>
-            <!-- <b-nav-item-dropdown right>
-                            <template v-slot:button-content>
-                                <display4>User</display4>
-                            </template>
-                            <b-dropdown-item href="#">Profile</b-dropdown-item>
-                            <b-dropdown-item href="#" to="/About"
-                                >Sign Out</b-dropdown-item
-                            >
-                        </b-nav-item-dropdown> -->
-            <!-- </b-navbar-nav>
-                    <b-navbar-nav> -->
-            <!-- Navbar dropdowns -->
-            <b-nav-item-dropdown text="☰" right>
-              <b-dropdown-item href="https://www.iiests.ac.in/" target="_blank"
-                >IIEST</b-dropdown-item
-              >
-              <b-dropdown-item
-                href="https://www.iiests.ac.in/IIEST/AcaUnitDetails/IT"
-                target="_blank"
-                >IT-IIEST</b-dropdown-item
-              >
-              <b-dropdown-item
-                href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit"
-                target="_blank"
-                >SOCIT</b-dropdown-item
-              >
-            </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
       </b-collapse>
@@ -118,12 +93,12 @@ export default {
 
 <style scoped>
 .bg-info {
-  background-color: #1e0c42 !important;
+  background-color: white !important;
   padding: 0.7rem;
-  box-shadow: 2px 2px 8px;
+  box-shadow: 1px 1px 8px;
 }
 .icon {
   display: inline-block;
   margin-right: 2px;
-}</style
->>
+}
+</style>
