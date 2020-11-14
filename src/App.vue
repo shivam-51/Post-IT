@@ -34,8 +34,8 @@ export default {
 </script>
 
 <style scoped>
-.mt-5 {
+/* .mt-5 {
   margin-top: 20px;
   padding-top: 15px;
-}
+} */
 </style>
