@@ -1,14 +1,24 @@
 <template>
-
   <div>
     <div class="icon-bar">
-    <a herf="https://www.iiests.ac.in/" class="iiest1"><i class="fas fa-school"></i></a>  
- <a href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit" class="facebook"><i class="fab fa-facebook-f"></i></a> 
-  <a href="https://twitter.com/iiest_s" class="twitter"><i class="fab fa-twitter"></i></a> 
-  <a href="https://iiests.irins.org/" class="vidwan"><i class="fas fa-lightbulb"></i></a> 
-  <a href="https://www.linkedin.com/school/iiests/" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-  <a href="mailto:shivamhere247@gmail.com" class="gmail"><i class="  fas fa-envelope"></i></a> 
-</div>
+      <a href="https://www.iiests.ac.in/" target="_blank" class="iiest1"
+        ><i class="fas fa-school"></i
+      ></a>
+      <a
+        href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit"
+        class="facebook"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a href="https://iiests.irins.org/" class="vidwan"
+        ><i class="fas fa-lightbulb"></i
+      ></a>
+      <a href="https://www.linkedin.com/school/iiests/" class="linkedin"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <a href="mailto:shivamhere247@gmail.com" class="gmail"
+        ><i class="  fas fa-envelope"></i
+      ></a>
+    </div>
     <b-carousel
       id="carousel"
       v-model="slide"
@@ -71,8 +81,8 @@
 #carousel {
   padding-top: 75px;
   margin-top: 40px;
-  width:90%;
-  left:70px;
+  width: 90%;
+  left: 70px;
   text-align: center;
 }
 .carousel-control-prev-icon,
@@ -127,12 +137,12 @@
   color: white;
 }
 .facebook {
-  background: #3B5998;
+  background: #3b5998;
   color: white;
 }
 
 .twitter {
-  background: #55ACEE;
+  background: #55acee;
   color: white;
 }
 
@@ -150,6 +160,4 @@
   background: #bb0000;
   color: white;
 }
-
-
 </style>

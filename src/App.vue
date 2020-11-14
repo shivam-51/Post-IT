@@ -3,6 +3,7 @@
     <Loading :isLoading="isLoading" />
     <main v-if="!isLoading">
       <Navbar title="Post-IT" />
+      <div style="height:73px "></div>
       <router-view />
       <Footer />
     </main>
@@ -31,3 +32,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+/* .mt-5 {
+  margin-top: 20px;
+  padding-top: 15px;
+} */
+</style>

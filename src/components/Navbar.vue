@@ -1,6 +1,6 @@
 <template>
   <div fixed:top class=" bg-white rounded" id="navbar">
-    <b-navbar toggleable="lg" type="dark" variant="info">
+    <b-navbar toggleable="lg" type="dark" variant="info" class="pl-5 fixed-top">
       <b-navbar-brand href="#" to="/">
         <img class="icon" src="../../src/assets/PIlogo.png" width="39" />
         Post-IT
@@ -8,7 +8,7 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
+        <b-navbar-nav class="cl-effect-1">
           <b-nav-item
             href="#"
             to="/allblog"
@@ -33,45 +33,18 @@
             <b-button
               v-if="!user && !currentPage.includes('signup')"
               variant="outline-warning"
-              class="mr-3"
+              class="mr-4"
               to="signup"
               >Sign Up</b-button
             >
             <b-button
               v-if="!user && !currentPage.includes('login')"
               variant="outline-warning"
-              class="mr-2"
+              class="mr-5"
               to="login"
               >Log In</b-button
             >
             <b-button v-if="user" @click.prevent="signout"> Sign Out</b-button>
-            <!-- <b-nav-item-dropdown right>
-                            <template v-slot:button-content>
-                                <display4>User</display4>
-                            </template>
-                            <b-dropdown-item href="#">Profile</b-dropdown-item>
-                            <b-dropdown-item href="#" to="/About"
-                                >Sign Out</b-dropdown-item
-                            >
-                        </b-nav-item-dropdown> -->
-            <!-- </b-navbar-nav>
-                    <b-navbar-nav> -->
-            <!-- Navbar dropdowns -->
-            <b-nav-item-dropdown text="☰" right>
-              <b-dropdown-item href="https://www.iiests.ac.in/" target="_blank"
-                >IIEST</b-dropdown-item
-              >
-              <b-dropdown-item
-                href="https://www.iiests.ac.in/IIEST/AcaUnitDetails/IT"
-                target="_blank"
-                >IT-IIEST</b-dropdown-item
-              >
-              <b-dropdown-item
-                href="https://www.facebook.com/search/top?q=society%20of%20information%20technology%20-%20socit"
-                target="_blank"
-                >SOCIT</b-dropdown-item
-              >
-            </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
       </b-collapse>
@@ -125,5 +98,42 @@ export default {
 .icon {
   display: inline-block;
   margin-right: 2px;
-}</style
->>
+}
+.nav-link {
+  font-size: 17px;
+}
+.cl-effect-1 a::before,
+.cl-effect-1 a::after {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1 a::before {
+  margin-right: 10px;
+  content: "[";
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.cl-effect-1 a::after {
+  margin-left: 10px;
+  content: "]";
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px);
+}
+
+.cl-effect-1 a:hover::before,
+.cl-effect-1 a:hover::after,
+.cl-effect-1 a:focus::before,
+.cl-effect-1 a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px);
+}
+</style>

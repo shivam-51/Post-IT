@@ -64,6 +64,12 @@ export default {
       //     console.log("No User");
       //     // No user is signed in.
       //   }
+      var str = this.description;
+      if (!str || !str.trim()) {
+        alert("Empty description");
+        return;
+        //str is null, undefined, or contains only spaces
+      }
       db.collection("blogs_third")
         .doc()
         .set({

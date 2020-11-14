@@ -32,7 +32,7 @@
       <div class="mt-5">
         <div
           class="card p-md-5 p-2 ml-md-n5 mr-md-n5"
-          style="background-color: rgba(50, 146, 166, 0.8)"
+          style="background-color: #f00"
         >
           <div class="row">
             <div
@@ -65,7 +65,7 @@
 
 <script>
 export default {
-  name: "Intro",
+  name: "Intro"
 };
 </script>
 
@@ -84,12 +84,12 @@ export default {
   border-style: outset;
   border-radius: 50px;
   background-size: cover;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 8px 6px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   /* width: 40%; */
 }
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 6px 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 .floating {
   animation-name: floating;
