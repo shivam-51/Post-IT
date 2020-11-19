@@ -87,6 +87,9 @@ export default {
   max-width: 30%;
   padding: 0 4px;
 }
+.row{
+  justify-content: space-evenly;
+}
 .card {
   width: 50px;
   margin: 25px;
