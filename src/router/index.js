@@ -46,6 +46,18 @@ const routes = [
     component: () => import("../views/People.vue")
   },
   {
+    path: "/allnotice",
+    name: "AllNotice",
+    component: () => import("../views/AllNotice.vue"),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: "/addnotice",
+    name: "AddNotice",
+    component: () => import("../views/AddNotice.vue"),
+    meta: { requiresAuth: true }
+  },
+  {
     path: "/addpeople/:id",
     name: "AddPeople",
     component: () => import("../views/AddPeople.vue"),
