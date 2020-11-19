@@ -48,12 +48,14 @@ const routes = [
   {
     path: "/allnotice",
     name: "AllNotice",
-    component: () => import("../views/AllNotice.vue")
+    component: () => import("../views/AllNotice.vue"),
+    meta: { requiresAuth: true }
   },
   {
     path: "/addnotice",
     name: "AddNotice",
-    component: () => import("../views/AddNotice.vue")
+    component: () => import("../views/AddNotice.vue"),
+    meta: { requiresAuth: true }
   },
   {
     path: "/addpeople/:id",
