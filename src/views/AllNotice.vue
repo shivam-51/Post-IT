@@ -19,12 +19,12 @@
             <span style="color:transparent">|</span>
             <i
               class="far fa-calendar-alt"
-              style="font-size:11px;color:blue"
+              style="font-size:11px;color:black"
             ></i>
             <span style="color:transparent">|</span>
           </div>
           <div style="margin:0px">
-            <span style="color:blue"
+            <span style="color:black"
               ><small>{{ not.timestamp }}</small></span
             >
           </div>
