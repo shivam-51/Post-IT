@@ -2,23 +2,20 @@
   <div class="container">
     <div class="card-container">
       <div class="allblogs" v-for="blog in blogs" :key="blog.id">
-        <div
-          class="card bg-light mb-5"
-          style="max-width: 60rem; font-size:30px"
-        >
+        <div class="card bg-light mb-5" style="max-width: 60rem;">
           <div class="container ">
             <span
-              ><b> {{ blog.title }}</b></span
+              ><b style="font-size:22px"> {{ blog.title }}</b></span
             >
           </div>
           <!-- <div class="card-header">{{ blog.title }}</div> -->
-          <div class="card-body">
+          <div class="card-body bg-white">
             <p class="card-text" id="card-text">
               {{ blog.description }}
             </p>
           </div>
-          <footer style="font-size:15px;" class="ml-auto">
-            <span>posted by </span
+          <footer style="font-size:15px;" class="ml-auto mr-4">
+            <span style="opacity:30%">posted by </span
             ><span style="color:blue;">{{ blog.user }}</span>
           </footer>
         </div>
