@@ -19,19 +19,26 @@
             <span style="color:transparent">|</span>
             <i
               class="far fa-calendar-alt"
-              style="font-size:11px;color:blue"
+              style="font-size:11px;color:black"
             ></i>
             <span style="color:transparent">|</span>
           </div>
           <div style="margin:0px">
-            <span style="color:blue"
+            <span style="color:black"
               ><small>{{ not.timestamp }}</small></span
             >
           </div>
           <div style="text-align:left;clear:both">
-            <span
-              ><strong>{{ not.notices }}</strong></span
-            >
+            <div class="title">
+              <span
+                ><b style="font-size:22px;"> {{ not.title }}</b></span
+              >
+            </div>
+            <iframe
+              v-bind:src="not.image"
+              onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'
+              style="height:600px;width:100%;border:none;overflow:hidden; "
+            ></iframe>
           </div>
         </li>
       </ul>
@@ -40,8 +47,8 @@
         <li>There is no notice at present right now</li>
       </ul>
     </div>
-  </section> </template
->y
+  </section>
+</template>
 
 <script>
 import firebase from "firebase";
@@ -55,7 +62,7 @@ export default {
   methods: {
     async fetchnotice() {
       var db = firebase.firestore();
-      db.collection("noticeboard")
+      db.collection("noticeboard3")
         .orderBy("timestamp", "desc")
         .onSnapshot(querySnapshot => {
           let allnotice = [];
@@ -74,6 +81,9 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  margin-bottom: 10px;
+}
 .body {
   background: linear-gradient(to bottom right, white, #bcbdc4);
   padding: 15px;

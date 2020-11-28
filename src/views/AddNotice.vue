@@ -1,39 +1,63 @@
 <template>
-  <section class="body">
-    <div class="formbody">
-      <h1 style="font-family: san-serif; text-align: center">Add a Notice</h1>
-      <form @submit="addnot" class="form">
-        <textarea
-          class="inp"
-          type="text"
-          placeholder="Add a Notice..."
-          rows="3"
-          v-model="notices"
-        ></textarea>
-        <div style="text-align: center">
-          <input type="submit" value="Submit" class="btn" />
-        </div>
-      </form>
+  <div class="addblog">
+    <div class="container">
+      <div class="card card-container">
+        <h1 id="header">Enter a new Notice</h1>
+        <br />
+        <form action="" class="signup" @submit.prevent="AddNotice">
+          <div>
+            <input
+              class="input"
+              type="text"
+              id="name"
+              v-model="title"
+              required
+              autofocus
+              placeholder="Title of the Notice"
+            />
+            <br />
+            <br />
+            <span style="color:blue;padding:5px;">Upload the Notice</span>
+            <input type="file" @change="previewImage" accept=".pdf" alt="img" />
+            <br />
+            <br />
+            <button
+              class="btn btn-lg btn-primary btn-block btn-postit"
+              type="submit"
+            >
+              Post IT
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-import firebase from "firebase";
+import app from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
+import "firebase/storage";
+
 export default {
-  name: "AllNotice",
+  name: "addpeople",
   data() {
     return {
-      notices: "",
-      user: "",
+      id: this.$route.params.id,
+      name: null,
       timestamp: null,
+      imageData: null,
+      picture: null,
+      uploadValue: null
     };
   },
   methods: {
     gettime() {
+      console.log("Entering");
       var today = new Date();
       var date =
-         today.getDate()+
+        today.getDate() +
         "-" +
         (today.getMonth() + 1) +
         "-" +
@@ -42,89 +66,98 @@ export default {
         today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
       this.timestamp = date + " " + time;
     },
-    async addnot() {
-      this.gettime();
-      var db = firebase.firestore();
-      db.collection("noticeboard").add({
-        notices: this.notices,
-        user: this.user.displayName,
-        timestamp: this.timestamp,
-      });
-      this.$router.push("/allnotice");
-      this.notices = "";
+    async previewImage(event) {
+      this.picture = null;
+      this.imageData = null;
+      this.imageData = event.target.files[0];
     },
-  },
-  created() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.user = user;
+    async AddNotice() {
+      this.gettime();
+      console.log("Now here");
+      const db = app.firestore();
+      var snapshot;
+      try {
+        snapshot = await app
+          .storage()
+          .ref("notices/" + Date.now())
+          .put(this.imageData);
+      } catch (error) {
+        console.log(error.message);
       }
-    });
-  },
+      this.picture = await snapshot.ref.getDownloadURL();
+      //   this.picture = "https://source.unsplash.com/user/erondu/1600x900";
+
+      console.log("Now here again");
+
+      var curusername = app.auth().currentUser.displayName;
+      await db
+        .collection("noticeboard3")
+        .doc()
+        .set({
+          title: this.title,
+          image: this.picture,
+          timestamp: this.timestamp,
+          user: curusername
+        })
+        .then(function() {
+          console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+          console.error("Error writing document: ", error);
+        });
+      this.$router.push("/allnotice");
+    }
+  }
 };
 </script>
 
 <style scoped>
-.body {
-  background: linear-gradient(to bottom right, white, #bcbdc4);
-  align-items: center;
-}
-.formbody {
-  max-width: 60%;
-  margin: auto;
-  padding: 100px;
-}
-.form {
-  flex: auto;
-  padding: 15px;
-  align-items: center;
-}
-.heading {
-  background-color: teal;
-
-  margin: 5rem auto;
-  margin-bottom: 2rem;
-  width: 90%;
-  max-width: 50rem;
-  padding: 15px;
-  border-radius: 10px;
-  color: whitesmoke;
-  text-align: center;
-  box-shadow: gray 3px 3px 3px;
-}
-.btn {
-  font: inherit;
-  cursor: pointer;
-  border: 1px solid #ff0077;
-  background-color: #ff0077;
-
-  color: white;
-  padding: 15px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
-
-  width: 80px;
-  /* height:60px; */
-  display: inline-block;
-}
-.btn:hover {
-  background-color: #ec3169;
-  border-color: #ec3169;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
-}
-.inp {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.input {
+  font-size: 16px;
+  padding: 5px;
   width: 100%;
-  max-width: 70rem;
-  padding: 15px;
-  color: black;
-  border: 2px solid darkblue;
-  box-shadow: gray 3px 3px 3px;
-  /* text-align: center; */
 }
-textarea {
-  min-height: 130px;
-  max-height: 130px;
-  font: 12px;
+.addblog {
+  min-height: 100vh;
+  padding: 0;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 51%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.card-container.card {
+  max-width: 600px;
+  width: 400px;
+  max-height: 650px;
+  padding: 40px 40px;
+}
+#header {
+  text-align: center;
+}
+/*
+ * Card component
+ */
+.card {
+  background-color: #f7f7f7;
+  /* just in case there no content*/
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  /* shadows and rounded borders */
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+/*
+ * Form styles
+ */
 </style>

@@ -12,7 +12,7 @@
         </div>
         <div class="team-content">
           <h4 class="title">Surajit Kumar Roy</h4>
-          <span class="post">Project Instructor</span>
+          <span class="post">Project Mentor</span>
           <span class="post">Associate Professor, Information Technology</span>
           <span class="post">IIEST Shibpur</span>
         </div>
