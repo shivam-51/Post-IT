@@ -8,6 +8,13 @@
           src="@/assets/PIlogodark.png"
         />
         <p id="profile-name" class="profile-name-card"></p>
+        <button
+          class="btn btn-lg btn-primary btn-block btn-signin"
+          @click.prevent="google_signin"
+        >
+          <i class="fab fa-google mr-5"></i>Sign in with google
+        </button>
+        <!-- </form> -->
         <form class="form-signin" @submit.prevent="addmessage">
           <span id="reauth-email" class="reauth-email"></span>
           <input
@@ -30,12 +37,12 @@
             placeholder="Password"
             required
           />
-          <div id="remember" class="checkbox">
+          <!-- <div id="remember" class="checkbox">
             <label>
               <input type="checkbox" value="remember-me" />
               Remember me
             </label>
-          </div>
+          </div> -->
           <button
             class="btn btn-lg btn-primary btn-block btn-signin"
             type="submit"
@@ -64,6 +71,36 @@ export default {
     return { email: null, password: null, feedback: "" };
   },
   methods: {
+    async google_signin() {
+      console.log("Works!");
+      var provider = new firebase.auth.GoogleAuthProvider();
+      try {
+        var user = await firebase
+          .auth()
+          .signInWithPopup(provider)
+          .then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            var user = result.user;
+            console.log(token + user);
+            console.log("Completed Successfully");
+          });
+        this.$router.push("/");
+        console.log(user);
+      } catch (error) {
+        // Handle Errors here.
+        //   var errorCode = error.code;
+        //   var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        var pwd = error.password;
+        // The firebase.auth.AuthCredential type that was used.
+        //   var credential = error.credential;
+        console.log(email + pwd);
+        console.log("Error");
+        // ...
+      }
+    },
     async addmessage() {
       if (this.email) {
         try {
@@ -200,7 +237,7 @@ export default {
 
 .btn.btn-signin {
   /*background-color: #4d90fe; */
-  background-color: rgb(104, 145, 162);
+  background-color: rgb(83, 158, 243);
   /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
   padding: 0px;
   font-weight: 700;
