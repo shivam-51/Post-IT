@@ -86,6 +86,7 @@ export default {
   background-size: cover;
   box-shadow: 8px 6px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+  /* margin-left:60px; */
   /* width: 40%; */
 }
 .card:hover {

@@ -30,16 +30,18 @@
         </ul>
         <!-- <v-select options="['first', 'second', 'third','fourth','alumni','faculty']"></v-select> -->
         <select v-model="kind" class="content">
-            <option value="first">First Year</option>
-            <option value="second">Second Year</option>
-            <option value="third">Third Year</option>
-            <option value="fourth">Fourth Year</option>
+            <option value="first">First</option>
+            <option value="second">Second</option>
+            <option value="third">Third</option>
+            <option value="fourth">Fourth</option>
             <option value="alumni">Alumni</option>
             <option value="faculty">Faculty</option>
             
         </select>
       </div>
+     
       <div class="side-main">
+        
         <span v-show="kind == 'first'"> <First username="first_year" /> </span>
         <span v-show="kind == 'second'">
           <First username="second_year" />
@@ -50,6 +52,7 @@
         </span>
         <span v-show="kind == 'alumni'"> <First username="alumni" /> </span>
         <span v-show="kind == 'faculty'"> <First username="faculty" /> </span>
+        
       </div>
       <div class="side-main center">
         <div class="fixed-btn ml-auto">
@@ -175,7 +178,10 @@ export default {
 .content-container {
   padding-top: 20px;
 }
-
+.drop{
+  text-align:center;
+  /* float:left; */
+}
 .sidebar-logo {
   padding: 10px 15px 10px 30px;
   font-size: 20px;
@@ -229,6 +235,7 @@ export default {
 .sidebar-container select {
   display: none;
 }
+
 .content{
   position: absolute;
   background-color: #f9f9f9;
@@ -237,6 +244,7 @@ export default {
   padding: 12px 16px;
   overflow:none;
   z-index: 1;
+  text-align:center;
 }
 .sidebar-navigation .header {
   font-size: 12px;
@@ -258,7 +266,8 @@ export default {
   }
   .sidebar-container select {
     display: inline-block;
-    margin: 1rem;
+    margin-left:1rem;
+
   }
 }
 @media (max-width: 640px) {
@@ -267,8 +276,14 @@ export default {
   }
   .sidebar-container select {
     display: inline-block;
-    margin: 0.5rem;
-
+    margin-left:0.5rem;
+    width:100px;
+    text-align: center;
+  
+  }
+  .content{
+    font-size: smaller;
+    /* text-align: center; */
   }
   .side-main{
     margin-top:3rem;

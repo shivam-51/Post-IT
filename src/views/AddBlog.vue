@@ -50,9 +50,11 @@ export default {
     };
   },
   methods: {
+    
     AddBlog() {
       // Add a new document in collection "blogs"
       const db = app.firestore();
+      
       //   var curuser = firebase.auth().currentUser;
       //   console.log(curuser);
       var curusername = app.auth().currentUser.displayName;
@@ -76,7 +78,7 @@ export default {
           title: this.title,
           description: this.description,
           timestamp: Date.now(),
-          user: curusername
+          user: curusername,
         })
         .then(function() {
           console.log("Document successfully written!");
@@ -109,9 +111,9 @@ export default {
   justify-content: center;
 }
 .card-container.card {
+  margin-top:20px;
   max-width: 750px;
-  max-height: 650px;
-  height: 620px;
+  max-height: 720px;
   padding: 40px 40px;
 }
 /*

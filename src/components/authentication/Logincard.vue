@@ -9,10 +9,10 @@
         />
         <p id="profile-name" class="profile-name-card"></p>
         <button
-          class="btn btn-lg btn-primary btn-block btn-signin"
+          class="btn btn-lg btn-primary btn-block btn-signin" 
           @click.prevent="google_signin"
         >
-          <i class="fab fa-google mr-5"></i>Sign in with google
+          <i class="fab fa-google mr-2"></i>Sign in with google
         </button>
         <!-- </form> -->
         <form class="form-signin" @submit.prevent="addmessage">

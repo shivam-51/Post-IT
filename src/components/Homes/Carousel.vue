@@ -114,6 +114,7 @@
 }
 .icon-bar {
   position: fixed;
+  
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -159,5 +160,13 @@
 .gmail {
   background: #bb0000;
   color: white;
+}
+@media (max-width: 640px) {
+  .icon-bar{
+    display:none;
+  }
+  #carousel{
+    left:25px;
+  }
 }
 </style>
