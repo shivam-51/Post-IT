@@ -80,11 +80,13 @@ export default {
 }
 
 .card-body {
-  font-size: 110%;
+  font-size: 90%;
+  font-weight:500;
 }
 .column {
-  flex: 25%;
-  max-width: 30%;
+  flex: 35%;
+  max-width: 25%;
+  min-width:25%;
   padding: 0 4px;
 }
 .row{
@@ -93,7 +95,7 @@ export default {
 .card {
   width: 50px;
   margin: 25px;
-  padding: 5px;
+  padding: 2px;
   border-style: outset;
   border-radius: 10px;
   background-size: cover;
@@ -111,11 +113,19 @@ export default {
   justify-content: center;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
+
+@media screen and (max-width: 1024px) {
+  .column {
+    flex: 40%;
+    max-width: 40%;
+
+  }
+}
+
 @media screen and (max-width: 800px) {
   .column {
     flex: 50%;
-    max-width: 50%;
+    max-width: 60%;
   }
 }
 
@@ -123,7 +133,10 @@ export default {
 @media screen and (max-width: 600px) {
   .column {
     flex: 100%;
-    max-width: 100%;
+    max-width: 80%;
   }
+  .card-body {
+  font-size: 90%;
+}
 }
 </style>
