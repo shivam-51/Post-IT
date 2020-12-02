@@ -2,9 +2,9 @@
   <div style="overflow: hidden">
     <div class="center mt-4 mb-4 heading1" style="text-align: center">
       <h1 v-if="kind != 'alumni' && kind != 'faculty'">
-        Meet the {{ kind }} year students of IT department
+        Meet the {{ kind }} year students of IT Department
       </h1>
-      <h1 v-else>Meet the {{ kind }} of IT department</h1>
+      <h1 v-else>Meet the {{ kind }} of IT Department</h1>
     </div>
     <div class="twitter-wrap">
       <div class="sidebar-container">
@@ -126,6 +126,7 @@ export default {
 
 .heading1 {
   text-shadow: 0px 1px 2px;
+  padding:3px;
 }
 .center {
   /* height: 500px; */
@@ -156,6 +157,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   border: 6px solid #ffe14d;
   /* box-shadow: 0 1px 10px rgba(0, 0, 0, 0.46); */
   opacity: 0.8;
@@ -281,12 +283,20 @@ export default {
     text-align: center;
   
   }
+  h1{
+    font-size:32px;
+  }
   .content{
     font-size: smaller;
     /* text-align: center; */
   }
   .side-main{
     margin-top:3rem;
+  }
+  .fixed-btn{
+    height:1vw;
+    width:1vw;
+    
   }
 }
 </style>
