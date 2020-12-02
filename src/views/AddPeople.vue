@@ -152,7 +152,7 @@ export default {
   justify-content: center;
 }
 .card-container.card {
-  max-width: 600px;
+  max-width: 500px;
   width: 400px;
   max-height: 650px;
   padding: 40px 40px;
@@ -179,4 +179,9 @@ export default {
 /*
  * Form styles
  */
+ @media (max-width: 450px){
+   .card-container.card{
+     width:300px;
+   }
+ }
 </style>

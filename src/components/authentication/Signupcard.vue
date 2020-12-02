@@ -176,7 +176,7 @@ img.avatar {
   padding: 0px;
   font-weight: 700;
   font-size: 14px;
-  height: 36px;
+  height: 40px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -203,6 +203,14 @@ img.avatar {
   .cancelbtn,
   .signupbtn {
     width: 50%;
+  }
+  .card{
+    width:80%;
+    margin-left:40px;
+  }
+  .profile-img-card{
+    /* margin-left:60px; */
+    margin:auto;
   }
 }
 </style>

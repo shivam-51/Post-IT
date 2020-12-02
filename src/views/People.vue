@@ -1,13 +1,13 @@
 <template>
   <div style="overflow: hidden">
-    <div class="center mt-4 mb-4 heading1">
+    <div class="center mt-4 mb-4 heading1" style="text-align: center">
       <h1 v-if="kind != 'alumni' && kind != 'faculty'">
-        Meet the {{ kind }} year students of IT department
+        Meet the {{ kind }} year students of IT Department
       </h1>
-      <h1 v-else>Meet the {{ kind }} of IT department</h1>
+      <h1 v-else>Meet the {{ kind }} of IT Department</h1>
     </div>
     <div class="twitter-wrap">
-      <div class="side-left  sidebar-container">
+      <div class="sidebar-container">
         <ul class="sidebar-navigation">
           <li>
             <b-button @click.prevent="first">First Year</b-button>
@@ -28,8 +28,20 @@
             <b-button @click.prevent="faculty">Faculty</b-button>
           </li>
         </ul>
+        <!-- <v-select options="['first', 'second', 'third','fourth','alumni','faculty']"></v-select> -->
+        <select v-model="kind" class="content">
+            <option value="first">First</option>
+            <option value="second">Second</option>
+            <option value="third">Third</option>
+            <option value="fourth">Fourth</option>
+            <option value="alumni">Alumni</option>
+            <option value="faculty">Faculty</option>
+            
+        </select>
       </div>
+     
       <div class="side-main">
+        
         <span v-show="kind == 'first'"> <First username="first_year" /> </span>
         <span v-show="kind == 'second'">
           <First username="second_year" />
@@ -40,6 +52,7 @@
         </span>
         <span v-show="kind == 'alumni'"> <First username="alumni" /> </span>
         <span v-show="kind == 'faculty'"> <First username="faculty" /> </span>
+        
       </div>
       <div class="side-main center">
         <div class="fixed-btn ml-auto">
@@ -74,7 +87,7 @@ export default {
   name: "People",
   data() {
     return {
-      kind: "first"
+      kind: "first",
     };
   },
   components: {
@@ -98,8 +111,8 @@ export default {
     },
     faculty() {
       this.kind = "faculty";
-    }
-  }
+    },
+  },
 };
 </script>
 >
@@ -113,6 +126,7 @@ export default {
 
 .heading1 {
   text-shadow: 0px 1px 2px;
+  padding:3px;
 }
 .center {
   /* height: 500px; */
@@ -143,6 +157,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   border: 6px solid #ffe14d;
   /* box-shadow: 0 1px 10px rgba(0, 0, 0, 0.46); */
   opacity: 0.8;
@@ -153,7 +168,7 @@ export default {
   align-items: center;
   justify-content: center;
   /* position: fixed; */
-  width: 320px;
+  max-width: 320px;
   height: 100%;
   left: 0;
   overflow-x: hidden;
@@ -165,7 +180,10 @@ export default {
 .content-container {
   padding-top: 20px;
 }
-
+.drop{
+  text-align:center;
+  /* float:left; */
+}
 .sidebar-logo {
   padding: 10px 15px 10px 30px;
   font-size: 20px;
@@ -216,7 +234,20 @@ export default {
   width: 3px;
   z-index: -1;
 }
+.sidebar-container select {
+  display: none;
+}
 
+.content{
+  position: absolute;
+  background-color: #f9f9f9;
+  /* min-width: 160px; */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  overflow:none;
+  z-index: 1;
+  text-align:center;
+}
 .sidebar-navigation .header {
   font-size: 12px;
   text-transform: uppercase;
@@ -230,5 +261,42 @@ export default {
 
 .content-container {
   padding-left: 220px;
+}
+@media (max-width: 1024px) {
+  .sidebar-container ul {
+    display: none;
+  }
+  .sidebar-container select {
+    display: inline-block;
+    margin-left:1rem;
+
+  }
+}
+@media (max-width: 640px) {
+  .sidebar-container ul {
+    display: none;
+  }
+  .sidebar-container select {
+    display: inline-block;
+    margin-left:0.5rem;
+    width:100px;
+    text-align: center;
+  
+  }
+  h1{
+    font-size:32px;
+  }
+  .content{
+    font-size: smaller;
+    /* text-align: center; */
+  }
+  .side-main{
+    margin-top:3rem;
+  }
+  .fixed-btn{
+    height:1vw;
+    width:1vw;
+    
+  }
 }
 </style>
