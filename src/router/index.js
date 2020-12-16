@@ -43,7 +43,7 @@ const routes = [
   {
     path: "/people",
     name: "People",
-    component: () => import("../views/People.vue")
+    component: () => import("../views/AllPeople.vue")
   },
   {
     path: "/allnotice",
@@ -52,7 +52,7 @@ const routes = [
     meta: { requiresAuth: true }
   },
   {
-    path: "/addnotice",
+    path: "/addnotice/:id",
     name: "AddNotice",
     component: () => import("../views/AddNotice.vue"),
     meta: { requiresAuth: true }
@@ -63,11 +63,6 @@ const routes = [
     component: () => import("../views/AddPeople.vue"),
     meta: { requiresAuth: true }
   }
-  //   {
-  //     path: "/people/first",
-  //     name: "First",
-  //     component: () => import("../components/Family/First.vue")
-  //   }
 ];
 
 const router = new VueRouter({
