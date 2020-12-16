@@ -11,7 +11,8 @@
         <img
           class="card-img-top"
           v-bind:src="user.image"
-          alt="Card image cap" style="height:230px;"
+          alt="Card image cap"
+          style="height:230px;"
         />
         <div class="card-body">
           <!-- <span >{{ user.image }}</span> -->
@@ -38,7 +39,7 @@ import app from "firebase/app";
 import "firebase/firestore";
 
 export default {
-  name: "first",
+  name: "People",
   props: {
     username: String
   },
@@ -81,15 +82,15 @@ export default {
 
 .card-body {
   font-size: 90%;
-  font-weight:500;
+  font-weight: 500;
 }
 .column {
   flex: 35%;
   max-width: 25%;
-  min-width:25%;
+  min-width: 25%;
   padding: 0 4px;
 }
-.row{
+.row {
   justify-content: space-evenly;
 }
 .card {
@@ -113,12 +114,10 @@ export default {
   justify-content: center;
 }
 
-
 @media screen and (max-width: 1024px) {
   .column {
     flex: 40%;
     max-width: 40%;
-
   }
 }
 
@@ -136,7 +135,7 @@ export default {
     max-width: 80%;
   }
   .card-body {
-  font-size: 90%;
-}
+    font-size: 90%;
+  }
 }
 </style>

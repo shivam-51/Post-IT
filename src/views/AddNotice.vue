@@ -91,7 +91,7 @@ export default {
 
       var curusername = app.auth().currentUser.displayName;
       await db
-        .collection("noticeboard3")
+        .collection(String(this.id))
         .doc()
         .set({
           title: this.title,
