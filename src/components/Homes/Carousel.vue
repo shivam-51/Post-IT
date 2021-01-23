@@ -72,6 +72,16 @@
             <br />
           </template>
         </b-carousel-slide>
+        <b-carousel-slide>
+          <template v-slot:img>
+            <img
+              class="image"
+              src="@/assets/group.jpeg"
+              alt="image slot"
+              style="width:700px; height:auto; object-fit: cover"
+            />
+          </template>
+        </b-carousel-slide>
       </div>
     </b-carousel>
   </div>
@@ -114,7 +124,7 @@
 }
 .icon-bar {
   position: fixed;
-  
+
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -162,11 +172,11 @@
   color: white;
 }
 @media (max-width: 640px) {
-  .icon-bar{
-    display:none;
+  .icon-bar {
+    display: none;
   }
-  #carousel{
-    left:25px;
+  #carousel {
+    left: 25px;
   }
 }
 </style>
