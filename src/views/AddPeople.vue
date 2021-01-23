@@ -38,7 +38,17 @@
             />
             <br />
             <br />
+            <input
+              class="input"
+              type="text"
+              id="name"
+              v-model="field"
+              placeholder="Domain/Specialization"
+            />
+            <br />
+            <div style="margin-top:20px">
             <span style="color:blue;padding:5px;">Choose your profile picture</span>
+            </div>
             <input
               type="file"
               @change="previewImage"
@@ -74,6 +84,7 @@ export default {
       name: null,
       phone: null,
       email: null,
+      field: null,
       description: null,
       timestamp: null,
       imageData: null,
@@ -112,6 +123,7 @@ export default {
           name: this.name,
           phone: this.phone,
           email: this.email,
+          field: this.field,
           image: this.picture,
           description: this.description,
           timestamp: Date.now(),

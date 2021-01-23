@@ -23,6 +23,10 @@
           <i class="far fa-envelope"></i>
           <span class="p-1">{{ user.email }}</span>
           <br />
+          <!-- <template > -->
+          <i class="fas fa-desktop" v-if="user.field!=null"></i>
+          <span class="p-1">{{ user.field }}</span>
+          <!-- </template> -->
           <br />
 
           <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
