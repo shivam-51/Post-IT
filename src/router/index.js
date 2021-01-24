@@ -26,13 +26,13 @@ const routes = [
   {
     path: "/addblog",
     name: "AddBlog",
-    component: () => import("../views/AddBlog.vue"),
+    component: () => import("../components/Blogs/AddBlog.vue"),
     meta: { requiresAuth: true }
   },
   {
     path: "/allblog",
     name: "AllBlog",
-    component: () => import("../views/AllBlog.vue"),
+    component: () => import("../components/Blogs/AllBlog.vue"),
     meta: { requiresAuth: true }
   },
   {
