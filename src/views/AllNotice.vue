@@ -31,14 +31,14 @@
         </select>
       </div>
 
-      <div class="side-main">
+      <div class="side-main" style="margin-top:20px">
         <div>
           <ul v-if="noticearr.length !== 0">
-            <li v-for="not in noticearr" :key="not.id">
+            <li v-for="not in noticearr" :key="not.id" style="padding:10px">
               <div style="float:left">
                 <span style="color:blue"
-                  ><small
-                    ><strong>{{ not.user + "  " }}</strong></small
+                  ><medium
+                    ><strong>{{ not.user + "  " }}</strong></medium
                   ></span
                 >
                 <span style="color:transparent">|</span>
@@ -55,7 +55,7 @@
               </div>
               <div style="text-align:left;clear:both">
                 <div class="title">
-                  <span
+                  <span style="margin-top:5px;"
                     ><b style="font-size:22px;"> {{ not.title }}</b></span
                   >
                 </div>
@@ -170,6 +170,7 @@ export default {
   background-image: url("../assets/walpaper.jpg");
   background-size: 40rem;
   margin: auto;
+  margin-top: 20px;
   width: 90%;
   max-width: 40rem;
   padding: 15px;
