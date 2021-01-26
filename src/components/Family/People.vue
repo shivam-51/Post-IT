@@ -11,8 +11,7 @@
         <img
           class="card-img-top"
           v-bind:src="user.image"
-          alt="Card image cap"
-          style="height:230px;"
+          alt="Card image cap" style="height:230px;"
         />
         <div class="card-body">
           <!-- <span >{{ user.image }}</span> -->
@@ -24,6 +23,10 @@
           <i class="far fa-envelope"></i>
           <span class="p-1">{{ user.email }}</span>
           <br />
+          <!-- <template > -->
+          <i class="fas fa-desktop" v-if="user.field!=null"></i>
+          <span class="p-1">{{ user.field }}</span>
+          <!-- </template> -->
           <br />
 
           <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -39,7 +42,7 @@ import app from "firebase/app";
 import "firebase/firestore";
 
 export default {
-  name: "People",
+  name: "first",
   props: {
     username: String
   },
@@ -81,22 +84,20 @@ export default {
 }
 
 .card-body {
-  font-size: 90%;
-  font-weight: 500;
+  font-size: 110%;
 }
 .column {
-  flex: 35%;
-  max-width: 25%;
-  min-width: 25%;
+  flex: 25%;
+  max-width: 30%;
   padding: 0 4px;
 }
-.row {
+.row{
   justify-content: space-evenly;
 }
 .card {
   width: 50px;
   margin: 25px;
-  padding: 2px;
+  padding: 5px;
   border-style: outset;
   border-radius: 10px;
   background-size: cover;
@@ -114,17 +115,11 @@ export default {
   justify-content: center;
 }
 
-@media screen and (max-width: 1024px) {
-  .column {
-    flex: 40%;
-    max-width: 40%;
-  }
-}
-
+/* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
     flex: 50%;
-    max-width: 60%;
+    max-width: 50%;
   }
 }
 
@@ -132,10 +127,7 @@ export default {
 @media screen and (max-width: 600px) {
   .column {
     flex: 100%;
-    max-width: 80%;
-  }
-  .card-body {
-    font-size: 90%;
+    max-width: 100%;
   }
 }
 </style>

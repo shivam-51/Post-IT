@@ -5,7 +5,7 @@
         <h1 id="header">Enter a new Entry</h1>
         <br />
         <form action="" class="signup" @submit.prevent="AddBlog">
-          <div>
+          <div id="form_details">
             <input
               class="input"
               type="text"
@@ -20,7 +20,7 @@
             <input
               class="input"
               type="number"
-              id="name"
+              id="phone"
               v-model="phone"
               required
               autofocus
@@ -31,14 +31,24 @@
             <input
               class="input"
               type="text"
-              id="name"
+              id="email"
               v-model="email"
               required
               placeholder="Email"
             />
             <br />
             <br />
+            <input
+              class="input"
+              type="text"
+              id="domain"
+              v-model="field"
+              placeholder="Domain/Specialization"
+            />
+            <br />
+            <div style="margin-top:20px">
             <span style="color:blue;padding:5px;">Choose your profile picture</span>
+            </div>
             <input
               type="file"
               @change="previewImage"
@@ -74,6 +84,7 @@ export default {
       name: null,
       phone: null,
       email: null,
+      field: null,
       description: null,
       timestamp: null,
       imageData: null,
@@ -112,6 +123,7 @@ export default {
           name: this.name,
           phone: this.phone,
           email: this.email,
+          field: this.field,
           image: this.picture,
           description: this.description,
           timestamp: Date.now(),
@@ -159,6 +171,10 @@ export default {
 }
 #header{
   text-align: center;
+}
+#name,#phone,#email,#domain{
+  border-radius: 15px;
+  border:1px solid blue;
 }
 /*
  * Card component
