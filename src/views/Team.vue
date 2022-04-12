@@ -98,7 +98,7 @@ export default {
           id: "4",
           pic_name: "Adi.jpg",
           name: "Aditya Agarwal",
-          role: "Front End Developer",
+          role: "Back End Developer",
           facebook_link:
             "https://www.facebook.com/profile.php?id=100008020094550",
           github_link: "https://github.com/aditya2610/",
